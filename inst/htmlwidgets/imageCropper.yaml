@@ -25,7 +25,7 @@ dependencies:
   version: 1.8.3
   src: htmlwidgets
   script: ./lib/js/bootstrap.bundle.min.js
-  stylesheet: ./lib/css/bootstrap.css
+  #stylesheet: ./lib/css/bootstrap.css
 - name: google-analytics
   version: 1.8.3
   src: htmlwidgets
@@ -33,7 +33,7 @@ dependencies:
 - name: bootstrap-min
   version: 1.8.3
   src: htmlwidgets
-  stylesheet: ./lib/css/bootstrap.min.css
+  #stylesheet: ./lib/css/bootstrap.min.css
 - name: fontawesome
   version: 1.8.3
   src: htmlwidgets
