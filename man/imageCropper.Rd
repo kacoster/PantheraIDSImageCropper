@@ -22,8 +22,7 @@ in any other case leave as NULL which results in an
 automatically generated one.}
 }
 \description{
-This function maps images to a html component to complete the
-             rendering of images...
+This function completes building the image cropper component.
 }
 \examples{
 imageCropper()

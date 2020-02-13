@@ -1,6 +1,5 @@
 #' @title Image Cropper Function
-#' @description This function maps images to a html component to complete the
-#'              rendering of images...
+#' @description This function completes building the image cropper component.
 #'
 #' @param width  Fixed width for widget (in css units). The default is NULL, which
 #'               results in intelligent automatic sizing based on the widget’s
