@@ -1,0 +1,31 @@
+Package: PantheraIDSImageCropper
+Title: Image Cropper package based on on jquery-croppe, a jQuery plugin wrapper 
+       for Cropper.js  and the 'htmlwidgets' package. 
+      The package is ideally developed to be used within Shiny Apps
+Version: 1.0.0
+Authors@R: 
+    person(given = "Valentine",
+           family = "Tawira",
+           role = c("aut", "cre"),
+           email = "vtawira@panthera.org")
+Description: Image cropper widget for cropping images. 
+Usage: imageCropper(width,height,elementId)
+License:  MIT 
+Imports: htmlwidgets
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.1
+NeedsCompilation: no
+Packaged: 2020-02-13 09:54:45 UTC; 
+Maintainer: Valentine Tawira  <vtawira@panthera.org>
+URL: https://github.com/kacoster/PantheraIDSImageCropper
+BugReports: https://github.com/kacoster/PantheraIDSImageCropper/issues
+Repository: GitHub
+RemoteType: github
+RemoteHost: api.github.com
+RemoteRepo: PantheraIDSImageCropper 
+RemoteUsername: kacoster
+RemoteRef: master
+GithubRepo: PantheraIDSImageCropper 
+GithubUsername: kacoster
+GithubRef: master
