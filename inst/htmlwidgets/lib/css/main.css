@@ -311,3 +311,25 @@ button#cls-btn.btn.btn-secondary{
   width: 100px;
   height: 100px;
 }
+
+
+div.wrapper {
+  position: relative;
+  clear: both;
+  width: 100%;
+  border : 1px solid #000000;
+  overflow:auto;
+  }
+  div.left {
+  float: left;
+  width: 39%;
+  background: #ffffff;
+  border : 1px solid #000006;
+
+  }	
+  div.right {
+  float: right;
+  width: 59%;
+  background: #ffffff;
+  border : 1px solid #000001;
+  }
