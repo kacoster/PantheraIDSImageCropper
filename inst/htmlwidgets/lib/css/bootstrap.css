@@ -3528,10 +3528,10 @@ input[type="button"].btn-block {
   justify-content: center;
 }
 
-.btn-group-vertical > .btn,
+/*.btn-group-vertical > .btn,
 .btn-group-vertical > .btn-group {
   width: 100%;
-}
+}*/
 
 .btn-group-vertical > .btn:not(:first-child),
 .btn-group-vertical > .btn-group:not(:first-child) {
