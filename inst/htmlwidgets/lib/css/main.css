@@ -313,23 +313,23 @@ div.wrapper-colums {
   position: relative;
   /*clear: both;*/
   width: 100%;
-  margin-left: 10%;
-  margin-right: 10%;
+  margin-left: 20%;
+  margin-right: 20%;
   /*border : 1px solid #000000;*/
   
   }
   div.left {
   float: left;
-  width: 49%;
+  width: 39%;
   background: #ffffff;
   border : 1px #ffffff;
 
   }	
   div.right {
   float: right;
-  width: 50%;
+  width: 59%;
   background: #ffffff;
-  overflow:auto;
+  /*overflow:auto;*/
   /*border : 1px solid #000001;*/
   }
 
