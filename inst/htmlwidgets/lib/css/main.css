@@ -318,18 +318,19 @@ div.wrapper {
   clear: both;
   width: 100%;
   /*border : 1px solid #000000;*/
-  overflow:auto;
+  
   }
   div.left {
   float: left;
-  width: 40%;
+  width: 39%;
   background: #ffffff;
-  /*border : 1px solid #000006;*/
+  border : 1px solid #ffffff;
 
   }	
   div.right {
   float: right;
   width: 60%;
   background: #ffffff;
+  overflow:auto;
   /*border : 1px solid #000001;*/
   }
