@@ -281,16 +281,16 @@ button:active{
   border-color: black
   
 }
-#row-1{
+/* #row-1{
   width: 70%;
   display: -ms-flexbox;
   display: inherit;
-  /* flex: auto; */
+   flex: auto; 
   -ms-flex-wrap: wrap;
   flex-wrap: nowrap;
   margin-right: -15px;
   margin-left: -15px;
-}
+}*/
 
 .modal-dialog{
     background-color: #1c87c9;
