@@ -311,7 +311,7 @@ button#cls-btn.btn.btn-secondary{
 
 div.wrapper {
   position: relative;
-  clear: both;
+  /*clear: both;*/
   width: 100%;
   margin-left: 10%;
   margin-right: 10%;
@@ -334,7 +334,7 @@ div.wrapper {
   }
 
   .docs-data {
-    width: 100%;
+    width: 70%;
     height: 402px;
     overflow: auto;
   }
