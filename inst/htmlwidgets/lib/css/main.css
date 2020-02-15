@@ -348,7 +348,11 @@ div.wrapper-colums {
 
   #inner-btns{
     display: inline-block;
-    margin-left: 4%;
+    margin-left: -39%;
     margin-right: 4%;
     margin-top: 30px;
+  }
+
+  #inner-btns *{
+    width: auto;
   }
