@@ -358,7 +358,7 @@ div.wrapper-colums {
     width: auto;
   }
 
-  .ul-lay > li {
+  .list-unstyled > li {
 
       border: 1px solid white;
       float: left;
