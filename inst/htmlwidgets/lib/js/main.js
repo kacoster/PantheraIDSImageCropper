@@ -77,17 +77,16 @@ $(function () {
     $download.addClass('disabled');
   }
 
-  $( "#ul-layout").click(function() {
+  // $( "#dvPreview").click(function() {
+  //   uploadedImageName = event.target.alt;  // the orignal image name is @id 
+  //   uploadedImageType = event.target.id;
+  //   $image.cropper('destroy').attr('src', event.target.src).cropper(options);
+  // });
 
+  $( "#ul-layout").click(function() {
     uploadedImageName = event.target.alt;  // the orignal image name is @id 
     uploadedImageType = event.target.id;
-    //console.log( "Image SRC : " + event.target.src);  // the blob url is @src
-    //console.log( "Image filename : " + uploadedImageName );
-    //console.log( "Image Type : " + uploadedImageType);
-
     $image.cropper('destroy').attr('src', event.target.src).cropper(options);
-
-   
   });
   
   // Options
@@ -218,47 +217,6 @@ $(function () {
       }
     }
   });
-  
-
-
-
-  /**_----------------------------------------------------------------------------------- 
-  $(function () {
-    $("#fileupload").change(function () {
-        if (typeof (FileReader) != "undefined") {
-            let dvPreview = $("#dvPreview");
-            dvPreview.html("");
-            let regex = /^([a-zA-Z0-9\s_\\.\-:])+(.jpg|.jpeg|.gif|.png|.bmp)$/;
-            let count = 0;
-            let file2 = this.files;
-            $($(this)[0].files).each(function () {
-                let file = $(this);
-                let file1 = file2[count]; 
-                console.log("File Name : " + file1.name);
-                count++;
-                if (regex.test(file[0].name.toLowerCase())) {
-                    var reader = new FileReader();
-                    reader.onload = function (e) {
-                        let img = $("<img />");
-                        img.attr("style", "max-height:160px;max-width: 120px;width: auto;height:auto;");
-                        img.attr("src", e.target.result);
-                        img.attr("name",file1.name);
-                        img.attr("class","border");
-                        dvPreview.append(img);
-                    }
-                    reader.readAsDataURL(file[0]);
-                } else {
-                    alert(file[0].name + " is not a valid image file.");
-                    dvPreview.html("");
-                    return false;
-                }
-            });
-        } else {
-            alert("This browser does not support HTML5 FileReader.");
-        }
-    });
-});
- ----------------------------------------------------------------------------------- */
 
   // Keyboard
   $(document.body).on('keydown', function (e) {
@@ -304,6 +262,7 @@ $(function () {
     //console.log("inputImage");
     if (typeof (FileReader) != "undefined") {
       //console.log("inputImage if 1");
+        //let dvPreview = $("#dvPreview");
         let dvPreview = $("#ul-layout");
         dvPreview.html("");
         let regex = /^([a-zA-Z0-9\s_\\.\-:])+(.jpg|.jpeg|.gif|.png|.bmp)$/;
@@ -318,23 +277,16 @@ $(function () {
                 var reader = new FileReader();
                 reader.onload = function (e) {
                     let img = $("<img />");
-                    let sty = 'max-height:160px;max-width: 120px;width: auto;height:auto;';
-                    
                     img.attr("style", "max-height:160px;max-width: 120px;width: auto;height:auto;");
+                    let syl = 'max-height:160px;max-width: 120px;width: auto;height:auto;';
                     img.attr("src", e.target.result);
                     //img.attr("filename",file1.name);
                     img.attr("alt",imagefile.name);
                     img.attr("id",imagefile.type);
                     img.attr("class","border");
-
-                    let cl = 'border';
-
-
-                    let myli = '<li  ><img id="' + imagefile.type + '" style="' + sty + '"  class="' + cl + '" src="' + e.target.result + '"  alt="' + imagefile.name + '" /> </li>';
-
-                    dvPreview.append(myli);
                     //dvPreview.append(img);
-                    
+                    let myli = '<li  ><img id="' + imagefile.type + '" style="' + syl + '"  class="' + cl + '" src="' + e.target.result + '"  alt="' + imagefile.name + '" /> </li>';
+                    dvPreview.append(myli);
                     //uploadedImageName = file1.name;
                     //uploadedImageType = file1.type;
                     //addCropperImage(e.target.result,imagefile.name,imagefile.type);
