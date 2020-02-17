@@ -193,7 +193,9 @@ $(function () {
               $('<a href='+result.toDataURL(uploadedImageType)+' download='+uploadedImageName+' ></a>')[0].click();
               let id = (uploadedImageName).slice(0, (uploadedImageName).indexOf("."));
               console.log("id is : #" + id);
+
               $('#' + id + '').css({
+                'background-color':'yellow',
                 'opacity': '0.4'
                 //'filter': 'alpha(opacity=40)'
               });
