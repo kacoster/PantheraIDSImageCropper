@@ -318,6 +318,7 @@ $(function () {
                 var reader = new FileReader();
                 reader.onload = function (e) {
                     let img = $("<img />");
+                    let sty = 'max-height:160px;max-width: 120px;width: auto;height:auto;';
                     
                     img.attr("style", "max-height:160px;max-width: 120px;width: auto;height:auto;");
                     img.attr("src", e.target.result);
@@ -325,8 +326,14 @@ $(function () {
                     img.attr("alt",imagefile.name);
                     img.attr("id",imagefile.type);
                     img.attr("class","border");
-                    dvPreview.append('<li  >'+ img + '</li>');
-                    // dvPreview.append(img);
+
+                    let cl = 'border';
+
+
+                    let myli = '<li  ><img id="' + imagefile.type + '" style="' + sty + '"  class="' + cl + '" src="' + e.target.result + '"  alt="' + imagefile.name + '" /> </li>';
+
+                    dvPreview.append(myli);
+                    //dvPreview.append(img);
                     
                     //uploadedImageName = file1.name;
                     //uploadedImageType = file1.type;
