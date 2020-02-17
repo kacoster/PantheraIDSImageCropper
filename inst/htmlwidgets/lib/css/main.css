@@ -365,3 +365,13 @@ div.wrapper-colums {
     grid-gap: 1px;
     align-items: stretch;
   }
+
+  .ul-lay > li {
+
+      border: 2px solid white;
+      float: left;
+      /*height: calc(100% / 3);*/
+      margin: 0 -1px -1px 0;
+      overflow: hidden;
+      /*width: calc(100% / 3);*/
+  }
