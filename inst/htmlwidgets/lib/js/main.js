@@ -304,7 +304,7 @@ $(function () {
     //console.log("inputImage");
     if (typeof (FileReader) != "undefined") {
       //console.log("inputImage if 1");
-        let dvPreview = $("#dvPreview");
+        let dvPreview = $("#ul-layout");
         dvPreview.html("");
         let regex = /^([a-zA-Z0-9\s_\\.\-:])+(.jpg|.jpeg|.gif|.png|.bmp)$/;
         let count = 0;
@@ -332,7 +332,7 @@ $(function () {
 
                     let myli = '<li  ><img id="' + imagefile.type + '" style="' + sty + '"  class="' + cl + '" src="' + e.target.result + '"  alt="' + imagefile.name + '" /> </li>';
 
-                    ul-layout.append(myli);
+                    dvPreview.append(myli);
                     //dvPreview.append(img);
                     
                     //uploadedImageName = file1.name;
