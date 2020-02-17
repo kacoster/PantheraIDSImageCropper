@@ -357,3 +357,7 @@ div.wrapper-colums {
   #inner-btns *{
     width: auto;
   }
+
+  #btn-grp-4{
+    width: 100%;
+  }
