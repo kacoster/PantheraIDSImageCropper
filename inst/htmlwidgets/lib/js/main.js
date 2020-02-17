@@ -81,9 +81,9 @@ $(function () {
 
     uploadedImageName = event.target.alt;  // the orignal image name is @id 
     uploadedImageType = event.target.id;
-    console.log( "Image SRC : " + event.target.src);  // the blob url is @src
-    console.log( "Image filename : " + uploadedImageName );
-    console.log( "Image Type : " + uploadedImageType);
+    //console.log( "Image SRC : " + event.target.src);  // the blob url is @src
+    //console.log( "Image filename : " + uploadedImageName );
+    //console.log( "Image Type : " + uploadedImageType);
 
     $image.cropper('destroy').attr('src', event.target.src).cropper(options);
 
