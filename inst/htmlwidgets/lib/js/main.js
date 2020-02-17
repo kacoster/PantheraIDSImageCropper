@@ -291,7 +291,7 @@ $(function () {
 
   function addCropperImage(src,imageName,imageType)
   {
-    console.log("File Type :" + imageType);
+    //console.log("File Type :" + imageType);
     uploadedImageName = imageName;
     uploadedImageType = imageType;
     $image.cropper('destroy').attr('src', src).cropper(options);
@@ -299,18 +299,18 @@ $(function () {
 
   // Import image
  // var $inputImage = $('#inputImage');
-  console.log("In main.js");
+  //console.log("In main.js");
   $('#inputImage').change(function () {
-    console.log("inputImage");
+    //console.log("inputImage");
     if (typeof (FileReader) != "undefined") {
-      console.log("inputImage if 1");
+      //console.log("inputImage if 1");
         let dvPreview = $("#dvPreview");
         dvPreview.html("");
         let regex = /^([a-zA-Z0-9\s_\\.\-:])+(.jpg|.jpeg|.gif|.png|.bmp)$/;
         let count = 0;
         let files = this.files;
         $($(this)[0].files).each(function () {
-          console.log("inputImage loop");
+          //console.log("inputImage loop");
             let file = $(this);
             let imagefile = files[count]; 
             count++;
