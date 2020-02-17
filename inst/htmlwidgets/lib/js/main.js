@@ -196,7 +196,7 @@ $(function () {
                 'opacity': '0.4',
                 'filter': 'alpha(opacity=40)'
               });
-              $(".pictures > li").css("background-color", "yellow");
+              $(" .list-unstyled > li ").css("background-color", "yellow");
              
                
             }
