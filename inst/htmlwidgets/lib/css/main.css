@@ -343,7 +343,6 @@ div.wrapper-colums {
   {
       width:100%;
       text-align: center;
-     
   }
 
   #inner-btns{
@@ -351,7 +350,7 @@ div.wrapper-colums {
     margin-left: -39%;
     margin-right: 4%;
     clear: left; */
-    float: left;
+    clear: left;
     margin-top: 10px;
   }
 
