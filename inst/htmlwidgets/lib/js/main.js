@@ -332,7 +332,7 @@ $(function () {
 
                     let myli = '<li  ><img id="' + imagefile.type + '" style="' + sty + '"  class="' + cl + '" src="' + e.target.result + '"  alt="' + imagefile.name + '" /> </li>';
 
-                    dvPreview.append(myli);
+                    ul-layout.append(myli);
                     //dvPreview.append(img);
                     
                     //uploadedImageName = file1.name;
