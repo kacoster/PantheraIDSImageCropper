@@ -318,13 +318,16 @@ $(function () {
                 var reader = new FileReader();
                 reader.onload = function (e) {
                     let img = $("<img />");
+                    
                     img.attr("style", "max-height:160px;max-width: 120px;width: auto;height:auto;");
                     img.attr("src", e.target.result);
                     //img.attr("filename",file1.name);
                     img.attr("alt",imagefile.name);
                     img.attr("id",imagefile.type);
                     img.attr("class","border");
-                    dvPreview.append(img);
+                    dvPreview.append('<li  >'+ img + '</li>');
+                    // dvPreview.append(img);
+                    
                     //uploadedImageName = file1.name;
                     //uploadedImageType = file1.type;
                     //addCropperImage(e.target.result,imagefile.name,imagefile.type);
