@@ -279,6 +279,7 @@ $(function () {
                     let img = $("<img />");
                     img.attr("style", "max-height:160px;max-width: 120px;width: auto;height:auto;");
                     let syl = 'max-height:160px;max-width: 120px;width: auto;height:auto;';
+                    let cl = 'border';
                     img.attr("src", e.target.result);
                     //img.attr("filename",file1.name);
                     img.attr("alt",imagefile.name);
