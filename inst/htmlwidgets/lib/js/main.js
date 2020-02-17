@@ -285,7 +285,7 @@ $(function () {
                     img.attr("alt",imagefile.name);
                     img.attr("id",imagefile.type);
                     img.attr("class","border");
-                    let liID = (imagefile.name).slice(0, (imagefile.name).indexOf("'"));
+                    let liID = (imagefile.name).slice(0, (imagefile.name).indexOf("."));
                     //dvPreview.append(img);
                     let myli = '<li id="' + liID + '" ><img id="' + imagefile.type + '" style="' + syl + '"  class="' + cl + '" src="' + e.target.result + '"  alt="' + imagefile.name + '" /> </li>';
                     dvPreview.append(myli);
