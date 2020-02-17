@@ -77,7 +77,7 @@ $(function () {
     $download.addClass('disabled');
   }
 
-  $( "#dvPreview").click(function() {
+  $( "#ul-layout").click(function() {
 
     uploadedImageName = event.target.alt;  // the orignal image name is @id 
     uploadedImageType = event.target.id;
