@@ -81,9 +81,9 @@ $(function () {
 
     uploadedImageName = event.target.alt;  // the orignal image name is @id 
     uploadedImageType = event.target.id;
-    console.log( "Image SRC : " + event.target.src);  // the blob url is @src
-    console.log( "Image filename : " + uploadedImageName );
-    console.log( "Image Type : " + uploadedImageType);
+    //console.log( "Image SRC : " + event.target.src);  // the blob url is @src
+    //console.log( "Image filename : " + uploadedImageName );
+    //console.log( "Image Type : " + uploadedImageType);
 
     $image.cropper('destroy').attr('src', event.target.src).cropper(options);
 
@@ -291,7 +291,7 @@ $(function () {
 
   function addCropperImage(src,imageName,imageType)
   {
-    console.log("File Type :" + imageType);
+    //console.log("File Type :" + imageType);
     uploadedImageName = imageName;
     uploadedImageType = imageType;
     $image.cropper('destroy').attr('src', src).cropper(options);
@@ -299,18 +299,18 @@ $(function () {
 
   // Import image
  // var $inputImage = $('#inputImage');
-  console.log("In main.js");
+  //console.log("In main.js");
   $('#inputImage').change(function () {
-    console.log("inputImage");
+    //console.log("inputImage");
     if (typeof (FileReader) != "undefined") {
-      console.log("inputImage if 1");
+      //console.log("inputImage if 1");
         let dvPreview = $("#dvPreview");
         dvPreview.html("");
         let regex = /^([a-zA-Z0-9\s_\\.\-:])+(.jpg|.jpeg|.gif|.png|.bmp)$/;
         let count = 0;
         let files = this.files;
         $($(this)[0].files).each(function () {
-          console.log("inputImage loop");
+          //console.log("inputImage loop");
             let file = $(this);
             let imagefile = files[count]; 
             count++;
@@ -343,45 +343,43 @@ $(function () {
 
 });
 
-    // if (URL) {
-
-
-    // alert(URL);
-    // $inputImage.change(function () {
-    //   var files = this.files;
-    //   var file;
-    // 
-    //   if (!$image.data('cropper')) {
-    //     return;
-    //   }
-    // 
-    //   if (files && files.length) {
-    //     alert("if 1");
-    //     file = files[0];
-    //     console.log("files[0] :"  + URL.createObjectURL(file));
-    // 
-    //     if (/^image\/\w+$/.test(file.type)) {
-    //       alert("if 2");
-    //       uploadedImageName = file.name;
-    //       uploadedImageType = file.type;
-    // 
-    //       if (uploadedImageURL) {
-    //         alert("if 3");
-    //         URL.revokeObjectURL(uploadedImageURL);
-    //       }
-    // 
-    //       uploadedImageURL = URL.createObjectURL(file);
-    //       console.log("uploadedImageURL : " + uploadedImageURL);
-    //       console.log("originalImageURL : " + originalImageURL);
-    //       secOrig = "testing.jpg";
-    //       $image.cropper('destroy').attr('src', uploadedImageURL).cropper(options);
-    //       $inputImage.val('');
-    //     } else {
-    //       window.alert('Please choose an image file.');
-    //     }
-    //   }
-    // });
-    // } else {
-    //  $inputImage.prop('disabled', true).parent().addClass('disabled');
-    //}
+    /* if (URL) {
+     alert(URL);
+     $inputImage.change(function () {
+       var files = this.files;
+       var file;
+     
+       if (!$image.data('cropper')) {
+         return;
+       }
+     
+       if (files && files.length) {
+         alert("if 1");
+         file = files[0];
+         console.log("files[0] :"  + URL.createObjectURL(file));
+     
+         if (/^image\/\w+$/.test(file.type)) {
+           alert("if 2");
+           uploadedImageName = file.name;
+           uploadedImageType = file.type;
+     
+           if (uploadedImageURL) {
+             alert("if 3");
+             URL.revokeObjectURL(uploadedImageURL);
+           }
+     
+           uploadedImageURL = URL.createObjectURL(file);
+           console.log("uploadedImageURL : " + uploadedImageURL);
+           console.log("originalImageURL : " + originalImageURL);
+           secOrig = "testing.jpg";
+           $image.cropper('destroy').attr('src', uploadedImageURL).cropper(options);
+           $inputImage.val('');
+         } else {
+           window.alert('Please choose an image file.');
+         }
+       }
+     });
+     } else {
+      $inputImage.prop('disabled', true).parent().addClass('disabled');
+    }*/
 });
