@@ -287,7 +287,7 @@ $(function () {
                 reader.onload = function (e) {
                     let img = $("<img />");
                     img.attr("style", "max-height:160px;max-width: 120px;width: auto;height:auto;");
-                    let imgsyl = 'max-height:160px;max-width: 120px;width: auto;height:auto; background-color: yellow;';
+                    let imgsyl = 'max-height:160px;max-width: 120px;width: auto;height:auto;';
                     //let ulstyle = 'background-color: yellow;';
                     let cl = 'border';
                     img.attr("src", e.target.result);
@@ -310,6 +310,7 @@ $(function () {
                 return false;
             }
         });
+        $(".list-unstyled > li").css("background-color", "yellow");
        // addCropperImage(e.target.result,imagefile.name,imagefile.type);
     } else {
         alert("This browser does not support HTML5 FileReader.");
