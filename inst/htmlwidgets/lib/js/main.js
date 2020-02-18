@@ -288,7 +288,7 @@ $(function () {
                     let img = $("<img />");
                     img.attr("style", "max-height:160px;max-width: 120px;width: auto;height:auto;");
                     let imgsyl = 'max-height:160px;max-width: 120px;width: auto;height:auto; background-color: yellow;';
-                    let ulstyle = 'background-color: yellow;';
+                    //let ulstyle = 'background-color: yellow;';
                     let cl = 'border';
                     img.attr("src", e.target.result);
                     //img.attr("filename",file1.name);
@@ -297,7 +297,7 @@ $(function () {
                     img.attr("class","border");
                     let liID = (imagefile.name).slice(0, (imagefile.name).indexOf("."));
                     //dvPreview.append(img);
-                    let myli = '<li id="' + liID + '" style="' + ulstyle + '" ><img id="' + imagefile.type + '" style="' + imgsyl + '"  class="' + cl + '" src="' + e.target.result + '"  alt="' + imagefile.name + '" /> </li>';
+                    let myli = '<li id="' + liID + '"><img id="' + imagefile.type + '" style="' + imgsyl + '"  class="' + cl + '" src="' + e.target.result + '"  alt="' + imagefile.name + '" /> </li>';
                     dvPreview.append(myli);
                     //uploadedImageName = file1.name;
                     //uploadedImageType = file1.type;
