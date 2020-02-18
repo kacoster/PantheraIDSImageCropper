@@ -58,12 +58,12 @@ $(document).ready(function(){
       '</button>'
   );
   $('#btn-grp-3').append(
-    '<button type="button" class="btn btn-primary" data-method="move" data-option="-5" data-second-option="0" title="Move Left">'+
+    '<button type="button" class="btn btn-primary" data-method="move" data-option="-10" data-second-option="0" title="Move Left">'+
       '<span class="docs-tooltip" data-toggle="tooltip" data-animation="false" title="move left">'+
       '<span class="fa fa-arrow-left"></span>'+
       '</span>'+
       '</button>'+
-      '<button type="button" class="btn btn-primary" data-method="move" data-option="5" data-second-option="0" title="Move Right">'+
+      '<button type="button" class="btn btn-primary" data-method="move" data-option="10" data-second-option="0" title="Move Right">'+
       '<span class="docs-tooltip" data-toggle="tooltip" data-animation="false" title="move right">'+
       '<span class="fa fa-arrow-right"></span>'+
       '</span>'+
@@ -80,12 +80,12 @@ $(document).ready(function(){
       '</button>'
   );
   $('#btn-grp-4').append(
-    '<button type="button" class="btn btn-primary" data-method="rotate" data-option="-10" title="Rotate Left">'+
+    '<button type="button" class="btn btn-primary" data-method="rotate" data-option="-5" title="Rotate Left">'+
       '<span class="docs-tooltip" data-toggle="tooltip" data-animation="false" title="rotate anti-clockwise">'+
       '<span class="fa fa-undo-alt"></span>'+
       '</span>'+
       ' </button>'+
-      '<button type="button" class="btn btn-primary" data-method="rotate" data-option="10" title="Rotate Right">'+
+      '<button type="button" class="btn btn-primary" data-method="rotate" data-option="5" title="Rotate Right">'+
       '<span class="docs-tooltip" data-toggle="tooltip" data-animation="false" title="rotate clockwise">'+
       '<span class="fa fa-redo-alt"></span>'+
       '</span>'+

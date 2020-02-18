@@ -195,7 +195,7 @@ $(function () {
               console.log("id is : #" + id);
               
               $('#' + id + '').css({
-                'opacity': '0.4',
+                'opacity': '0.3',
                 'filter': 'alpha(opacity=40)'
               });
               $(".list-unstyled > li ").css("background-color", "yellow");
