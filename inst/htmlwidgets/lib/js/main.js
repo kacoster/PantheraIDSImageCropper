@@ -77,17 +77,16 @@ $(function () {
     $download.addClass('disabled');
   }
 
-  $( "#dvPreview").click(function() {
+  // $( "#dvPreview").click(function() {
+  //   uploadedImageName = event.target.alt;  // the orignal image name is @id 
+  //   uploadedImageType = event.target.id;
+  //   $image.cropper('destroy').attr('src', event.target.src).cropper(options);
+  // });
 
+  $( "#ul-layout").click(function() {
     uploadedImageName = event.target.alt;  // the orignal image name is @id 
     uploadedImageType = event.target.id;
-    //console.log( "Image SRC : " + event.target.src);  // the blob url is @src
-    //console.log( "Image filename : " + uploadedImageName );
-    //console.log( "Image Type : " + uploadedImageType);
-
     $image.cropper('destroy').attr('src', event.target.src).cropper(options);
-
-   
   });
   
   // Options
@@ -192,6 +191,15 @@ $(function () {
               download.download = uploadedImageName;
               $download.attr('href', result.toDataURL(uploadedImageType));
               $('<a href='+result.toDataURL(uploadedImageType)+' download='+uploadedImageName+' ></a>')[0].click();
+              let id = (uploadedImageName).slice(0, (uploadedImageName).indexOf("."));
+              console.log("id is : #" + id);
+              
+              $('#' + id + '').css({
+                'opacity': '0.3',
+                'filter': 'alpha(opacity=40)'
+              });
+              $(".list-unstyled > li ").css("background-color", "yellow");
+              
              
                
             }
@@ -218,47 +226,6 @@ $(function () {
       }
     }
   });
-  
-
-
-
-  /**_----------------------------------------------------------------------------------- 
-  $(function () {
-    $("#fileupload").change(function () {
-        if (typeof (FileReader) != "undefined") {
-            let dvPreview = $("#dvPreview");
-            dvPreview.html("");
-            let regex = /^([a-zA-Z0-9\s_\\.\-:])+(.jpg|.jpeg|.gif|.png|.bmp)$/;
-            let count = 0;
-            let file2 = this.files;
-            $($(this)[0].files).each(function () {
-                let file = $(this);
-                let file1 = file2[count]; 
-                console.log("File Name : " + file1.name);
-                count++;
-                if (regex.test(file[0].name.toLowerCase())) {
-                    var reader = new FileReader();
-                    reader.onload = function (e) {
-                        let img = $("<img />");
-                        img.attr("style", "max-height:160px;max-width: 120px;width: auto;height:auto;");
-                        img.attr("src", e.target.result);
-                        img.attr("name",file1.name);
-                        img.attr("class","border");
-                        dvPreview.append(img);
-                    }
-                    reader.readAsDataURL(file[0]);
-                } else {
-                    alert(file[0].name + " is not a valid image file.");
-                    dvPreview.html("");
-                    return false;
-                }
-            });
-        } else {
-            alert("This browser does not support HTML5 FileReader.");
-        }
-    });
-});
- ----------------------------------------------------------------------------------- */
 
   // Keyboard
   $(document.body).on('keydown', function (e) {
@@ -304,11 +271,13 @@ $(function () {
     //console.log("inputImage");
     if (typeof (FileReader) != "undefined") {
       //console.log("inputImage if 1");
-        let dvPreview = $("#dvPreview");
+        //let dvPreview = $("#dvPreview");
+        let dvPreview = $("#ul-layout");
         dvPreview.html("");
         let regex = /^([a-zA-Z0-9\s_\\.\-:])+(.jpg|.jpeg|.gif|.png|.bmp)$/;
         let count = 0;
         let files = this.files;
+        $(".list-unstyled > li").css("background-color", "white");
         $($(this)[0].files).each(function () {
           //console.log("inputImage loop");
             let file = $(this);
@@ -319,12 +288,18 @@ $(function () {
                 reader.onload = function (e) {
                     let img = $("<img />");
                     img.attr("style", "max-height:160px;max-width: 120px;width: auto;height:auto;");
+                    let imgsyl = 'max-height:160px;max-width: 120px;width: auto;height:auto;';
+                    //let ulstyle = 'background-color: yellow;';
+                    let cl = 'border';
                     img.attr("src", e.target.result);
                     //img.attr("filename",file1.name);
                     img.attr("alt",imagefile.name);
                     img.attr("id",imagefile.type);
                     img.attr("class","border");
-                    dvPreview.append(img);
+                    let liID = (imagefile.name).slice(0, (imagefile.name).indexOf("."));
+                    //dvPreview.append(img);
+                    let myli = '<li id="' + liID + '"><img id="' + imagefile.type + '" style="' + imgsyl + '"  class="' + cl + '" src="' + e.target.result + '"  alt="' + imagefile.name + '" /> </li>';
+                    dvPreview.append(myli);
                     //uploadedImageName = file1.name;
                     //uploadedImageType = file1.type;
                     //addCropperImage(e.target.result,imagefile.name,imagefile.type);
@@ -336,6 +311,7 @@ $(function () {
                 return false;
             }
         });
+        $(".list-unstyled > li").css("background-color", "yellow");
        // addCropperImage(e.target.result,imagefile.name,imagefile.type);
     } else {
         alert("This browser does not support HTML5 FileReader.");

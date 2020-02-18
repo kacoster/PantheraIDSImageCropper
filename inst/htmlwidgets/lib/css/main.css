@@ -357,3 +357,12 @@ div.wrapper-colums {
   #inner-btns *{
     width: auto;
   }
+
+  .list-unstyled > li {
+
+      border: 1px solid white;
+      float: left;
+      margin: 0 -1px -1px 0;
+      overflow: hidden;
+      /*width: calc(100% / 3);*/
+  }
