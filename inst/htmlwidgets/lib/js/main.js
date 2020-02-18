@@ -277,6 +277,7 @@ $(function () {
         let regex = /^([a-zA-Z0-9\s_\\.\-:])+(.jpg|.jpeg|.gif|.png|.bmp)$/;
         let count = 0;
         let files = this.files;
+        $(".list-unstyled > li").css("background-color", "white");
         $($(this)[0].files).each(function () {
           //console.log("inputImage loop");
             let file = $(this);
