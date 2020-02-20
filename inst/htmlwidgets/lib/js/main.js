@@ -35,7 +35,7 @@ $(function () {
   $('[data-toggle="tooltip"]').tooltip();
 
 
-  // doc ready place default image 
+  // doc ready place default image
   $( document ).ready(function() {
     let src = "default.JPG";
     $image.cropper('destroy').attr('src', src).cropper(options);
@@ -44,6 +44,11 @@ $(function () {
   $image.on({
     ready: function (e) {
       console.log(e.type);
+      $('.cropper-crop-box').css({
+        "width": "88.0833px",
+        "height": "49.5469px",
+        "transform": "translateX(7%) translateY(426.875px)"
+      });
     },
     cropstart: function (e) {
       console.log(e.type, e.detail.action);
@@ -77,18 +82,13 @@ $(function () {
     $download.addClass('disabled');
   }
 
-  // $( "#dvPreview").click(function() {
-  //   uploadedImageName = event.target.alt;  // the orignal image name is @id 
-  //   uploadedImageType = event.target.id;
-  //   $image.cropper('destroy').attr('src', event.target.src).cropper(options);
-  // });
-
   $( "#ul-layout").click(function() {
-    uploadedImageName = event.target.alt;  // the orignal image name is @id 
+    uploadedImageName = event.target.alt;  // the orignal image name is @id
     uploadedImageType = event.target.id;
     $image.cropper('destroy').attr('src', event.target.src).cropper(options);
+    $('p#img-name').text(uploadedImageName);
   });
-  
+
   // Options
   $('.docs-toggles').on('change', 'input', function () {
     var $this = $(this);
@@ -181,27 +181,24 @@ $(function () {
 
         case 'getCroppedCanvas':
           if (result) {
-      
-            //data.option = {fillColor : '#fff'};
-            
-            //$('#getCroppedCanvasModal').modal().find('.modal-body').html(result);
 
+            
             if (!$download.hasClass('disabled')) {
-              
+
               download.download = uploadedImageName;
               $download.attr('href', result.toDataURL(uploadedImageType));
               $('<a href='+result.toDataURL(uploadedImageType)+' download='+uploadedImageName+' ></a>')[0].click();
               let id = (uploadedImageName).slice(0, (uploadedImageName).indexOf("."));
               console.log("id is : #" + id);
-              
+
               $('#' + id + '').css({
                 'opacity': '0.3',
                 'filter': 'alpha(opacity=40)'
               });
               $(".list-unstyled > li ").css("background-color", "yellow");
-              
-             
-               
+
+
+
             }
           }
 
@@ -281,7 +278,7 @@ $(function () {
         $($(this)[0].files).each(function () {
           //console.log("inputImage loop");
             let file = $(this);
-            let imagefile = files[count]; 
+            let imagefile = files[count];
             count++;
             if (regex.test(file[0].name.toLowerCase())) {
                 var reader = new FileReader();
@@ -289,21 +286,15 @@ $(function () {
                     let img = $("<img />");
                     img.attr("style", "max-height:160px;max-width: 120px;width: auto;height:auto;");
                     let imgsyl = 'max-height:160px;max-width: 120px;width: auto;height:auto;';
-                    //let ulstyle = 'background-color: yellow;';
                     let cl = 'border';
                     img.attr("src", e.target.result);
-                    //img.attr("filename",file1.name);
                     img.attr("alt",imagefile.name);
                     img.attr("id",imagefile.type);
                     img.attr("class","border");
                     let liID = (imagefile.name).slice(0, (imagefile.name).indexOf("."));
-                    //dvPreview.append(img);
                     let myli = '<li id="' + liID + '"><img id="' + imagefile.type + '" style="' + imgsyl + '"  class="' + cl + '" src="' + e.target.result + '"  alt="' + imagefile.name + '" /> </li>';
                     dvPreview.append(myli);
-                    //uploadedImageName = file1.name;
-                    //uploadedImageType = file1.type;
-                    //addCropperImage(e.target.result,imagefile.name,imagefile.type);
-                    //$image.cropper('destroy').attr('src', e.target.result).cropper(options);
+                    
                 }
                 reader.readAsDataURL(file[0]);
             } else {
@@ -312,50 +303,11 @@ $(function () {
             }
         });
         $(".list-unstyled > li").css("background-color", "yellow");
-       // addCropperImage(e.target.result,imagefile.name,imagefile.type);
     } else {
         alert("This browser does not support HTML5 FileReader.");
     }
 
 });
 
-    /* if (URL) {
-     alert(URL);
-     $inputImage.change(function () {
-       var files = this.files;
-       var file;
-     
-       if (!$image.data('cropper')) {
-         return;
-       }
-     
-       if (files && files.length) {
-         alert("if 1");
-         file = files[0];
-         console.log("files[0] :"  + URL.createObjectURL(file));
-     
-         if (/^image\/\w+$/.test(file.type)) {
-           alert("if 2");
-           uploadedImageName = file.name;
-           uploadedImageType = file.type;
-     
-           if (uploadedImageURL) {
-             alert("if 3");
-             URL.revokeObjectURL(uploadedImageURL);
-           }
-     
-           uploadedImageURL = URL.createObjectURL(file);
-           console.log("uploadedImageURL : " + uploadedImageURL);
-           console.log("originalImageURL : " + originalImageURL);
-           secOrig = "testing.jpg";
-           $image.cropper('destroy').attr('src', uploadedImageURL).cropper(options);
-           $inputImage.val('');
-         } else {
-           window.alert('Please choose an image file.');
-         }
-       }
-     });
-     } else {
-      $inputImage.prop('disabled', true).parent().addClass('disabled');
-    }*/
+   
 });
