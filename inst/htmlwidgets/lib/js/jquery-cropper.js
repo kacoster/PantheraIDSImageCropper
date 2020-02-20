@@ -1,12 +1,5 @@
-/*!
- * jQuery Cropper v1.0.1
- * https://fengyuanchen.github.io/jquery-cropper
- *
- * Copyright 2018-present Chen Fengyuan
- * Released under the MIT license
- *
- * Date: 2019-10-19T08:48:33.062Z
- */
+// v 1.0.1
+
 
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('jquery'), require('cropperjs')) :
