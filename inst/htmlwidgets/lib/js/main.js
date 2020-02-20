@@ -44,6 +44,7 @@ $(function () {
   $image.on({
     ready: function (e) {
       console.log(e.type);
+      console.log("Checking length : " + $('div.mydivclass').length);
       $('.cropper-crop-box').css({
         "width": "88.px",
         "height": "49px",
