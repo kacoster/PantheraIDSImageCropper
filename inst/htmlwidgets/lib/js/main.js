@@ -45,8 +45,8 @@ $(function () {
     ready: function (e) {
       console.log(e.type);
       $('.cropper-crop-box').css({
-        "width": "88.0833px",
-        "height": "49.5469px",
+        "width": "88.px",
+        "height": "49px",
         "transform": "translateX(7%) translateY(426.875px)"
       });
     },
