@@ -189,15 +189,12 @@ $(function () {
               $download.attr('href', result.toDataURL(uploadedImageType));
               $('<a href='+result.toDataURL(uploadedImageType)+' download='+uploadedImageName+' ></a>')[0].click();
               let id = (uploadedImageName).slice(0, (uploadedImageName).indexOf("."));
-              console.log("id is : #" + id);
 
               $('#' + id + '').css({
                 'opacity': '0.2',
                 'filter': 'alpha(opacity=40)'
               });
               $(".list-unstyled > li ").css("background-color", "yellow");
-
-
 
             }
           }
