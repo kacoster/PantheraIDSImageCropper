@@ -45,6 +45,11 @@ $(function () {
     ready: function (e) {
       console.log(e.type);
       console.log("length 1: " + $('div.mydivclass').length);
+      $('.cropper-crop-box').css({
+        "width": "88.px",
+        "height": "49px",
+        "transform": "translateX(7%) translateY(426.875px)"
+      });
     },
     cropstart: function (e) {
       console.log(e.type, e.detail.action);
@@ -58,11 +63,7 @@ $(function () {
     crop: function (e) {
       console.log(e.type);
       console.log("length 2: " + $('div.mydivclass').length);
-      $('.cropper-crop-box').css({
-        "width": "88.px",
-        "height": "49px",
-        "transform": "translateX(7%) translateY(426.875px)"
-      });
+     
     },
     zoom: function (e) {
       console.log(e.type, e.detail.ratio);
