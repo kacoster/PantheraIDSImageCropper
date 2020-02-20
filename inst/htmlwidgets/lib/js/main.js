@@ -258,14 +258,9 @@ $(function () {
     $image.cropper('destroy').attr('src', src).cropper(options);
   }
 
-  // Import image
- // var $inputImage = $('#inputImage');
-  //console.log("In main.js");
   $('#inputImage').change(function () {
-    //console.log("inputImage");
     if (typeof (FileReader) != "undefined") {
-      //console.log("inputImage if 1");
-        //let dvPreview = $("#dvPreview");
+      
         let dvPreview = $("#ul-layout");
         dvPreview.html("");
         let regex = /^([a-zA-Z0-9\s_\\.\-:])+(.jpg|.jpeg|.gif|.png|.bmp)$/;
@@ -273,7 +268,6 @@ $(function () {
         let files = this.files;
         $(".list-unstyled > li").css("background-color", "white");
         $($(this)[0].files).each(function () {
-          //console.log("inputImage loop");
             let file = $(this);
             let imagefile = files[count];
             count++;
