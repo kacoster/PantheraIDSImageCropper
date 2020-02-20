@@ -44,12 +44,7 @@ $(function () {
   $image.on({
     ready: function (e) {
       console.log(e.type);
-      console.log("Checking length 1: " + $('div.mydivclass').length);
-      $('.cropper-crop-box').css({
-        "width": "88.px",
-        "height": "49px",
-        "transform": "translateX(7%) translateY(426.875px)"
-      });
+      console.log("length 1: " + $('div.mydivclass').length);
     },
     cropstart: function (e) {
       console.log(e.type, e.detail.action);
@@ -62,7 +57,7 @@ $(function () {
     },
     crop: function (e) {
       console.log(e.type);
-      console.log("Checking length 2: " + $('div.mydivclass').length);
+      console.log("length 2: " + $('div.mydivclass').length);
       $('.cropper-crop-box').css({
         "width": "88.px",
         "height": "49px",
