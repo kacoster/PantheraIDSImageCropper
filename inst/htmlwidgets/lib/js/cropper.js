@@ -1454,7 +1454,7 @@
         }
   
         this.cropBoxData = cropBoxData;
-        this.limitCropBox(false, false); // Initialize auto crop area
+        this.limitCropBox(true, true); // Initialize auto crop area
   
         cropBoxData.width = Math.min(Math.max(cropBoxData.width, cropBoxData.minWidth), cropBoxData.maxWidth);
         cropBoxData.height = Math.min(Math.max(cropBoxData.height, cropBoxData.minHeight), cropBoxData.maxHeight); // The width/height of auto crop area must large than "minWidth/Height"

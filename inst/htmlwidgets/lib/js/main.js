@@ -64,18 +64,18 @@ $(function () {
     },
     zoom: function (e) {
       console.log(e.type, e.detail.ratio);
-      console.log("length 6: " + $('div.mydivclass').length);
+      console.log("length 6: " + $('div.cropper-crop-box').length);
     }
     
   }).cropper(options);
 
-  /**
+  console.log("length 7: " + $('div.cropper-crop-box').length);
     $('div.cropper-crop-box').css({
     "width": "88.px",
     "height": "49px",
     "transform": "translateX(7%) translateY(426.875px)"
   });
-   */
+  
 
   // Buttons
   if (!$.isFunction(document.createElement('canvas').getContext)) {
