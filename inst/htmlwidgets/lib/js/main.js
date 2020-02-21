@@ -68,7 +68,16 @@ $(function () {
       console.log(e.type, e.detail.ratio);
       console.log("length 6: " + $('div.mydivclass').length);
     }
+    
   }).cropper(options);
+
+  /**
+   * $('.cropper-crop-box').css({
+      "width": "88.px",
+      "height": "49px",
+      "transform": "translateX(7%) translateY(426.875px)"
+    });
+   */
 
   // Buttons
   if (!$.isFunction(document.createElement('canvas').getContext)) {
@@ -298,11 +307,7 @@ $(function () {
                 return false;
             }
         });
-        /*$('.cropper-crop-box').css({
-          "width": "88.px",
-          "height": "49px",
-          "transform": "translateX(7%) translateY(426.875px)"
-        });*/
+        
         $(".list-unstyled > li").css("background-color", "yellow");
     } else {
         alert("This browser does not support HTML5 FileReader.");
