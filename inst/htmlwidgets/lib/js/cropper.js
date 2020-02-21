@@ -1454,7 +1454,7 @@
         }
   
         this.cropBoxData = cropBoxData;
-        //this.limitCropBox(true, true); // Initialize auto crop area
+        this.limitCropBox(false, false); // Initialize auto crop area
   
         cropBoxData.width = Math.min(Math.max(cropBoxData.width, cropBoxData.minWidth), cropBoxData.maxWidth);
         cropBoxData.height = Math.min(Math.max(cropBoxData.height, cropBoxData.minHeight), cropBoxData.maxHeight); // The width/height of auto crop area must large than "minWidth/Height"
@@ -1509,12 +1509,6 @@
           cropBoxData.minHeight = Math.min(minCropBoxHeight, maxCropBoxHeight);
           cropBoxData.maxWidth = maxCropBoxWidth;
           cropBoxData.maxHeight = maxCropBoxHeight;
-          console.log("initCropBox");
-          //$('div.cropper-crop-box').css({
-          //  "width": "88.px",
-          //  "height": "49px",
-          //  "transform": "translateX(7%) translateY(426.875px)"
-          //});
         }
   
         if (positionLimited) {
@@ -1709,7 +1703,6 @@
         var element = this.element,
             options = this.options,
             cropper = this.cropper;
-            
   
         if (isFunction(options.cropstart)) {
           addListener(element, EVENT_CROP_START, options.cropstart);
