@@ -1,12 +1,6 @@
-/*!
- * Cropper.js v1.5.6
- * https://fengyuanchen.github.io/cropperjs
- *
- * Copyright 2015-present Chen Fengyuan
- * Released under the MIT license
- *
- * Date: 2019-10-04T04:33:44.164Z
- */
+
+ /* Cropper.js v1.5.6 */
+ 
 
  .cropper-container {
     direction: ltr;
@@ -44,12 +38,7 @@
     top: 0;
   }
 
-  .cropper-crop-box{
-
-    width: 88px;
-    height: 49px;
-    transform: translateX(7%) translateY(426.875px);
-  }
+  
   
   .cropper-wrap-box,
   .cropper-canvas {
