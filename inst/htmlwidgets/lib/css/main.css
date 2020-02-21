@@ -281,16 +281,6 @@ button:active{
   border-color: black
 
 }
-/* #row-1{
-  width: 70%;
-  display: -ms-flexbox;
-  display: inherit;
-   flex: auto;
-  -ms-flex-wrap: wrap;
-  flex-wrap: nowrap;
-  margin-right: -15px;
-  margin-left: -15px;
-}*/
 
 .modal-dialog{
     background-color: #1c87c9;
@@ -311,12 +301,9 @@ button#cls-btn.btn.btn-secondary{
 
 div.wrapper-colums {
   position: relative;
-  /*clear: both;*/
   width: 100%;
   margin-left: 4%;
   margin-right: 4%;
-  /*border : 1px solid #000000;*/
-
   }
   div.left {
   float: left;
@@ -329,8 +316,6 @@ div.wrapper-colums {
   float: right;
   width: 59%;
   background: #ffffff;
-  /*overflow:auto;*/
-  /*border : 1px solid #000001;*/
   }
 
   .docs-data {
@@ -414,8 +399,6 @@ div.wrapper-colums {
 .img-name-block {
   position: relative;
   max-width: 39%;
-  /*bottom: 20%;
-  right: 80px;*/
   background-color: white;
   color: black;
   margin-left: 4%;
