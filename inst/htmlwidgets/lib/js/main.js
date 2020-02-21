@@ -298,11 +298,11 @@ $(function () {
                 return false;
             }
         });
-        $('.cropper-crop-box').css({
+        /*$('.cropper-crop-box').css({
           "width": "88.px",
           "height": "49px",
           "transform": "translateX(7%) translateY(426.875px)"
-        });
+        });*/
         $(".list-unstyled > li").css("background-color", "yellow");
     } else {
         alert("This browser does not support HTML5 FileReader.");
