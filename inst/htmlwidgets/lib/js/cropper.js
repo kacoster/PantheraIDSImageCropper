@@ -1509,6 +1509,7 @@
           cropBoxData.minHeight = Math.min(minCropBoxHeight, maxCropBoxHeight);
           cropBoxData.maxWidth = maxCropBoxWidth;
           cropBoxData.maxHeight = maxCropBoxHeight;
+          alert("initCropBox");
         }
   
         if (positionLimited) {

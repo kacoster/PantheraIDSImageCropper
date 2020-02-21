@@ -1,6 +1,6 @@
 $(function () {
   'use strict';
-
+  
   var console = window.console || { log: function () {} };
   var URL = window.URL || window.webkitURL;
   var $image = $('#image');
@@ -39,14 +39,12 @@ $(function () {
     let src = "default.JPG";
     $image.cropper('destroy').attr('src', src).cropper(options);
     
-
   });
   // Cropper
   $image.on({
     ready: function (e) {
       console.log(e.type);
       console.log("length 1: " + $('div.cropper-crop-box').length);
-      
     },
     cropstart: function (e) {
       console.log(e.type, e.detail.action);
@@ -63,11 +61,6 @@ $(function () {
     crop: function (e) {
       console.log(e.type);
       console.log("length 5: " + $('div.cropper-crop-box').length);
-      $('div.cropper-crop-box').css({
-        "width": "88px",
-        "height": "49px",
-        "transform": "translateX(7%) translateY(426.875px)"
-      });
     },
     zoom: function (e) {
       console.log(e.type, e.detail.ratio);
@@ -104,6 +97,7 @@ $(function () {
     uploadedImageType = event.target.id;
     $image.cropper('destroy').attr('src', event.target.src).cropper(options);
     $('p#img-name').text(uploadedImageName);
+    console.log("#ul-layout length: " + $('div.cropper-crop-box').length);
   });
 
   // Options
