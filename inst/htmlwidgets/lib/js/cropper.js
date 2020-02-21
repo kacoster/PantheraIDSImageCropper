@@ -1509,7 +1509,12 @@
           cropBoxData.minHeight = Math.min(minCropBoxHeight, maxCropBoxHeight);
           cropBoxData.maxWidth = maxCropBoxWidth;
           cropBoxData.maxHeight = maxCropBoxHeight;
-          alert("initCropBox");
+          console.log("initCropBox");
+          $('div.cropper-crop-box').css({
+            "width": "88.px",
+            "height": "49px",
+            "transform": "translateX(7%) translateY(426.875px)"
+          });
         }
   
         if (positionLimited) {
