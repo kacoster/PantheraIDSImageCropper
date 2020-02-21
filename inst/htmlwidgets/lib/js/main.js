@@ -159,7 +159,6 @@ $(function () {
             if (!data.option) {
               data.option = {};
             }
-            //data.option.fillColor = '#fff';
           }
           break;
       }
@@ -182,7 +181,6 @@ $(function () {
         case 'getCroppedCanvas':
           if (result) {
 
-            
             if (!$download.hasClass('disabled')) {
 
               download.download = uploadedImageName;
@@ -252,7 +250,6 @@ $(function () {
 
   function addCropperImage(src,imageName,imageType)
   {
-    //console.log("File Type :" + imageType);
     uploadedImageName = imageName;
     uploadedImageType = imageType;
     $image.cropper('destroy').attr('src', src).cropper(options);
