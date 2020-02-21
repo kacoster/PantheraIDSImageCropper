@@ -63,6 +63,11 @@ $(function () {
     crop: function (e) {
       console.log(e.type);
       console.log("length 5: " + $('div.cropper-crop-box').length);
+      $('div.cropper-crop-box').css({
+        "width": "88px",
+        "height": "49px",
+        "transform": "translateX(7%) translateY(426.875px)"
+      });
     },
     zoom: function (e) {
       console.log(e.type, e.detail.ratio);
@@ -72,11 +77,11 @@ $(function () {
   }).cropper(options);
 
   /**
-   * $('.cropper-crop-box').css({
-      "width": "88.px",
-      "height": "49px",
-      "transform": "translateX(7%) translateY(426.875px)"
-    });
+    $('div.cropper-crop-box').css({
+    "width": "88.px",
+    "height": "49px",
+    "transform": "translateX(7%) translateY(426.875px)"
+  });
    */
 
   // Buttons

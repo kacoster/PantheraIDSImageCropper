@@ -1703,7 +1703,7 @@
         var element = this.element,
             options = this.options,
             cropper = this.cropper;
-            alert("cropper js events");
+            
   
         if (isFunction(options.cropstart)) {
           addListener(element, EVENT_CROP_START, options.cropstart);
