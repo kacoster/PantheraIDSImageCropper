@@ -189,7 +189,7 @@ $(function () {
                 'opacity': '0.2',
                 'filter': 'alpha(opacity=40)'
               });
-              $(".list-unstyled > li ").css("background-color", "yellow");
+              //$(".list-unstyled > li ").css("background-color", "yellow");
 
             }
           }
@@ -288,7 +288,7 @@ $(function () {
                 return false;
             }
         });
-        $(".list-unstyled > li").css("background-color", "yellow");
+        //$(".list-unstyled > li").css("background-color", "yellow");
     } else {
         alert("This browser does not support HTML5 FileReader.");
     }
