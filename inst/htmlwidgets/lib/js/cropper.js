@@ -1,11 +1,5 @@
 /*!
  * Cropper.js v1.5.6
- * https://fengyuanchen.github.io/cropperjs
- *
- * Copyright 2015-present Chen Fengyuan
- * Released under the MIT license
- *
- * Date: 2019-10-04T04:33:48.372Z
  */
 
 (function (global, factory) {
@@ -214,7 +208,7 @@
       // Show the grid background
       background: true,
       // Enable to crop the image automatically when initialize
-      autoCrop: true,
+      autoCrop: false,
       // Define the percentage of automatic cropping area when initializes
       autoCropArea: 0.8,
       // Enable to move the image

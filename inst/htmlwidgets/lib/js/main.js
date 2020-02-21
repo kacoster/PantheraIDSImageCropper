@@ -44,38 +44,25 @@ $(function () {
   $image.on({
     ready: function (e) {
       console.log(e.type);
-      console.log("length 1: " + $('div.cropper-crop-box').length);
     },
     cropstart: function (e) {
       console.log(e.type, e.detail.action);
-      console.log("length 2: " + $('div.cropper-crop-box').length);
     },
     cropmove: function (e) {
       console.log(e.type, e.detail.action);
-      console.log("length 3: " + $('div.cropper-crop-box').length);
     },
     cropend: function (e) {
       console.log(e.type, e.detail.action);
-      console.log("length 4: " + $('div.cropper-crop-box').length);
     },
     crop: function (e) {
       console.log(e.type);
-      console.log("length 5: " + $('div.cropper-crop-box').length);
     },
     zoom: function (e) {
       console.log(e.type, e.detail.ratio);
-      console.log("length 6: " + $('div.cropper-crop-box').length);
     }
     
   }).cropper(options);
 
-  console.log("length 7: " + $('div.cropper-crop-box').length);
-    $('div.cropper-crop-box').css({
-    "width": "88.px",
-    "height": "49px",
-    "transform": "translateX(7%) translateY(426.875px)"
-  });
-  
 
   // Buttons
   if (!$.isFunction(document.createElement('canvas').getContext)) {
