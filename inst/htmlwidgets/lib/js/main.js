@@ -33,40 +33,45 @@ $(function () {
 
   // Tooltip
   $('[data-toggle="tooltip"]').tooltip();
-
-
+  
   // doc ready place default image
   $( document ).ready(function() {
     let src = "default.JPG";
     $image.cropper('destroy').attr('src', src).cropper(options);
+    $('.cropper-crop-box').css({
+      "width": "88.px",
+      "height": "49px",
+      "transform": "translateX(7%) translateY(426.875px)"
+    });
+
   });
   // Cropper
   $image.on({
     ready: function (e) {
       console.log(e.type);
       console.log("length 1: " + $('div.mydivclass').length);
-      $('.cropper-crop-box').css({
-        "width": "88.px",
-        "height": "49px",
-        "transform": "translateX(7%) translateY(426.875px)"
-      });
+      
     },
     cropstart: function (e) {
       console.log(e.type, e.detail.action);
+      console.log("length 2: " + $('div.mydivclass').length);
     },
     cropmove: function (e) {
       console.log(e.type, e.detail.action);
+      console.log("length 3: " + $('div.mydivclass').length);
     },
     cropend: function (e) {
       console.log(e.type, e.detail.action);
+      console.log("length 4: " + $('div.mydivclass').length);
     },
     crop: function (e) {
       console.log(e.type);
-      console.log("length 2: " + $('div.mydivclass').length);
+      console.log("length 5: " + $('div.mydivclass').length);
      
     },
     zoom: function (e) {
       console.log(e.type, e.detail.ratio);
+      console.log("length 6: " + $('div.mydivclass').length);
     }
   }).cropper(options);
 
@@ -110,6 +115,7 @@ $(function () {
       canvasData = $image.cropper('getCanvasData');
 
       options.ready = function () {
+        
         $image.cropper('setCropBoxData', cropBoxData);
         $image.cropper('setCanvasData', canvasData);
       };
