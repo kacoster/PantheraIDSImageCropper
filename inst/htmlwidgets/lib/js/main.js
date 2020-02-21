@@ -63,12 +63,6 @@ $(function () {
     crop: function (e) {
       console.log(e.type);
       console.log("length 5: " + $('div.cropper-crop-box').length);
-      $('.cropper-crop-box').css({
-        "width": "88.px",
-        "height": "49px",
-        "transform": "translateX(7%) translateY(426.875px)"
-      });
-     
     },
     zoom: function (e) {
       console.log(e.type, e.detail.ratio);
@@ -111,6 +105,7 @@ $(function () {
     }
 
     if (type === 'checkbox') {
+      console.log("Check Box");
       options[name] = $this.prop('checked');
       cropBoxData = $image.cropper('getCropBoxData');
       canvasData = $image.cropper('getCanvasData');
@@ -302,6 +297,11 @@ $(function () {
                 alert(file[0].name + " is not a valid image file.");
                 return false;
             }
+        });
+        $('.cropper-crop-box').css({
+          "width": "88.px",
+          "height": "49px",
+          "transform": "translateX(7%) translateY(426.875px)"
         });
         $(".list-unstyled > li").css("background-color", "yellow");
     } else {
