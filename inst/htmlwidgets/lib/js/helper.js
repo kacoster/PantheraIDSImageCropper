@@ -48,7 +48,7 @@ $(document).ready(function(){
       '</button>'+
       '<label class="btn btn-primary" id="aspect4">'+
       '<input type="radio" class="sr-only" id="aspectRatio4" name="aspectRatio" value="NaN">'+
-      '<span class="docs-tooltip" data-toggle="tooltip" data-animation="false" title="aspectRatio: Free">'+
+      '<span class="docs-tooltip" data-toggle="tooltip" data-animation="false" title="grab mode">'+
       '<span class="fa fa-crop-alt"></span>'+
       '</span>'+
       '</label>'
