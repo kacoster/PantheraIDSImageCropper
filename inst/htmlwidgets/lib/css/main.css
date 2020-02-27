@@ -370,6 +370,13 @@ div.wrapper-colums {
      width: 33%;
   }
 
+  #btn-grp-3{
+    width: 10%;
+  }
+  #aspectRatio4{
+    width: 100%
+  }
+
   #btn-grp-4{
     width: 20%;
   }
@@ -382,9 +389,8 @@ div.wrapper-colums {
   }
 
   #btn-grp-5{
-    width: 40%;
+    width: 10%;
   }
-
 
   #sv-btn{
     width: 100%;

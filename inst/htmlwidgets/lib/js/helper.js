@@ -52,6 +52,15 @@ $(document).ready(function(){
       '</span>'+
       '</button>'
   );
+
+  $('#btn-grp-3').append(
+    '<label class="btn btn-primary">'+
+    '<input type="radio" class="sr-only" id="aspectRatio4" name="aspectRatio" value="NaN">'+
+    '<span class="docs-tooltip" data-toggle="tooltip" data-animation="false" title="aspectRatio: NaN">'+
+    'Free'+
+    '</span>'+
+    '</label>'
+);
  
   $('#btn-grp-4').append(
     '<button type="button" class="btn btn-primary" id="btn-rotate-acw" data-method="rotate" data-option="-5" title="Rotate Left">'+
@@ -67,14 +76,7 @@ $(document).ready(function(){
       
   );
 
-  $('#btn-grp-5').append(
-      '<label class="btn btn-primary">'+
-      '<input type="radio" class="sr-only" id="aspectRatio4" name="aspectRatio" value="NaN">'+
-      '<span class="docs-tooltip" data-toggle="tooltip" data-animation="false" title="aspectRatio: NaN">'+
-      'Free'+
-      '</span>'+
-      '</label>'
-  );
+  
 
   
   $('#btn-drag').attr('data-method','setDragMode');
