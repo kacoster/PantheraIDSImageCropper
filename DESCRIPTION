@@ -2,7 +2,7 @@ Package: PantheraIDSImageCropper
 Title: Image Cropper package based on on jquery-croppe, a jQuery plugin wrapper 
        for Cropper.js  and the 'htmlwidgets' package. 
       The package is ideally developed to be used within Shiny Apps
-Version: 1.0.0
+Version: 1.0.1
 Authors@R: 
     person(given = "Valentine",
            family = "Tawira",
