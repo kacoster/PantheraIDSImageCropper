@@ -1,4 +1,7 @@
 
+
+
+
 .btn {
   padding-left: .75rem;
   padding-right: .75rem;
@@ -304,6 +307,7 @@ div.wrapper-colums {
   width: 100%;
   margin-left: 4%;
   margin-right: 4%;
+
   }
   div.left {
   float: left;
@@ -347,7 +351,6 @@ div.wrapper-colums {
       float: left;
       margin: 0 -1px -1px 0;
       overflow: hidden;
-      /*width: calc(100% / 3);*/
   }
 
   #btn-grp-1{
@@ -368,6 +371,13 @@ div.wrapper-colums {
 
   #reset-btn{
      width: 33%;
+  }
+
+  #btn-grp-3{
+    width: 10%;
+  }
+  #aspect4{
+    width: 33%;
   }
 
   #btn-grp-4{
@@ -405,3 +415,4 @@ div.wrapper-colums {
   margin-right: 4%;
   text-align: center;
 }
+
