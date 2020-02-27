@@ -42,25 +42,26 @@ $(document).ready(function(){
 
   $('#btn-grp-2').append(
 
-    '</button>'+
+    
       '<button type="button" class="btn btn-primary" id="reset-btn" data-method="reset" title="Reset">'+
       '<span class="docs-tooltip"  title="reset cropper"><span class="fa fa-sync-alt"></span></span>'+
       '</button>'+
-      '<button type="button" class="btn btn-primary" id="btn-drag" data-method="setDragMode" data-option="crop" title="Crop">'+
-      '<span class="docs-tooltip" data-toggle="tooltip" data-animation="false" title="grab mode">'+
+      '<label class="btn btn-primary" id="aspect4">'+
+      '<input type="radio" class="sr-only" id="aspectRatio4" name="aspectRatio" value="NaN">'+
+      '<span class="docs-tooltip" data-toggle="tooltip" data-animation="false" title="aspectRatio: Free">'+
       '<span class="fa fa-crop-alt"></span>'+
       '</span>'+
-      '</button>'
+      '</label>'
   );
 
-  $('#btn-grp-3').append(
-    '<label class="btn btn-primary">'+
-    '<input type="radio" class="sr-only" id="aspectRatio4" name="aspectRatio" value="NaN">'+
-    '<span class="docs-tooltip" data-toggle="tooltip" data-animation="false" title="aspectRatio: NaN">'+
-    'Free'+
-    '</span>'+
-    '</label>'
-);
+  /*$('#btn-grp-3').append(
+      '<label class="btn btn-primary">'+
+      '<input type="radio" class="sr-only" id="aspectRatio4" name="aspectRatio" value="NaN">'+
+      '<span class="docs-tooltip" data-toggle="tooltip" data-animation="false" title="aspectRatio: NaN">'+
+      'Free'+
+      '</span>'+
+      '</label>'
+  );*/
  
   $('#btn-grp-4').append(
     '<button type="button" class="btn btn-primary" id="btn-rotate-acw" data-method="rotate" data-option="-5" title="Rotate Left">'+
