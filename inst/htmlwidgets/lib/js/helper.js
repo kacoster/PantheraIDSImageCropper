@@ -77,11 +77,10 @@ $(document).ready(function(){
       
   );
 
-  
-
-  
   $('#btn-drag').attr('data-method','setDragMode');
   $('#btn-drag').attr('data-option','move');
+  //$('#').click();
+  $( "#aspect4" ).trigger( "click" );
   
   document.getElementById('download').setAttribute('download','cropped.jpg');
 });
