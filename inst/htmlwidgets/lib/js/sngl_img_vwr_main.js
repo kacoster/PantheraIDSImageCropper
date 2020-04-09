@@ -1,4 +1,4 @@
-window.onload = function () {
+//window.onload = function () {
   'use strict';
 
   console.log("In main.js");
@@ -301,4 +301,4 @@ window.onload = function () {
     inputImage.disabled = true;
     inputImage.parentNode.className += ' disabled';
   }*/
-};
+//};
