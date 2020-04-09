@@ -34,10 +34,10 @@ class ViewerComponent {
 
 
       displayImage(){
-        if(this.this.moduleId === "spcs_idntfctn_id_rf_1"){
+        if(this.moduleId === "spcs_idntfctn_id_rf_1"){
           console.log("ModuleID : " + $('.rf_1_container').attr('id'));
         }
-        else if(this.this.moduleId === "spcs_idntfctn_id_rf_2"){
+        else if(this.moduleId === "spcs_idntfctn_id_rf_2"){
           console.log("ModuleID : " + $('.rf_2_container').attr('id'));
         }else{
 
