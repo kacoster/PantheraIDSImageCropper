@@ -57,6 +57,17 @@ class ViewerComponent {
         //this.imgloop(this.displayImages(this.imgNumb,0));
       }
 
+      trimSRC(selctdImgAry)
+      {
+        let tempArray = [];
+        selctdImgAry.forEach(function(item){
+        let newSRC = item.substring(item.lastIndexOf("/") + 1,item.length );
+          tempArray.push(newSRC);
+        });
+        return tempArray;
+      }
+
+
       initializeImgArray(array)
       {
         this.imgArray = [...arr];
@@ -156,14 +167,6 @@ class ViewerComponent {
 
 
 
-      trimSRC(selctdImgAry)
-      {
-        selctdImgAry.forEach(function(item){
-        let newSRC = item.substring(item.lastIndexOf("/") + 1,item.length );
-          tempArray.push(newSRC);
-        });
-        return tempArray;
-      }
 
       // This is specific to tag #
 
