@@ -5,7 +5,7 @@ window.onload = function () {
   // Target different element class here by differentiating the container class
   var Cropper = window.Cropper;
   //var URL = window.URL || window.webkitURL;
-  var container = document.querySelector('.rf_2_container');
+  var container = document.querySelector('.rf_1_container');
   var image = container.getElementsByTagName('img').item(0);
   /*var download = document.getElementById('download');
   var actions = document.getElementById('actions');

@@ -34,7 +34,14 @@ class ViewerComponent {
 
 
       displayImage(){
+        if(this.this.moduleId === "spcs_idntfctn_id_rf_1"){
+          console.log("ModuleID : " + $('.rf_1_container').attr('id'));
+        }
+        else if(this.this.moduleId === "spcs_idntfctn_id_rf_2"){
+          console.log("ModuleID : " + $('.rf_2_container').attr('id'));
+        }else{
 
+        }
       }
 
 
@@ -50,9 +57,9 @@ class ViewerComponent {
           this.imgArray[0] = this.imgArray[0].replace("Source", "");
           this.imgArray[0] = this.imgArray[this.imgArray.length - 1] + this.imgArray[0];
           this.imgArray.splice(this.imgArray.length - 1, 1);
+          this.displayImage();
 
-
-          console.log("Array : " + this.trimSRC(this.imgArray));
+          //console.log("Array : " + this.trimSRC(this.imgArray));
           //if(this.moduleId === "img_clssfctn_ud")
           //{
           //  Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
