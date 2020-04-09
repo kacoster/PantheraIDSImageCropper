@@ -1,28 +1,28 @@
 class ViewerComponent {
 
-      constructor(moduleId)
+      constructor(moduleId,csvfile)
       {
-
+        this.csvfile = csvfile;
         this.moduleId =moduleId;
         this.imgArray = [];
-        this.selected_images = [];
+        //this.selected_images = [];
         this.result = [];
       }
       // fetchServerData
 
-      fetchServerData(csvfile,moduleId)
+      fetchServerData()
       {
-        console.log("In fetchServerData moduleId : " + moduleId);
+        console.log("In fetchServerData moduleId : " + this.moduleId);
         //console.log(" DATA : " + this.loadFile(csvfile));
-        this.readServerData(this.loadFile(csvfile));
+        this.readServerData(this.loadFile(this.csvfile));
        //
       }
 
-      loadFile(filename) {
-        console.log("In loadFile : " +  filename);
+      loadFile() {
+        console.log("In loadFile : " +  this.csvfile);
         let result = null;
         let xmlhttp = new XMLHttpRequest();
-        xmlhttp.open("GET", filename, false);
+        xmlhttp.open("GET", this.csvfile, false);
         xmlhttp.send();
         if (xmlhttp.status==200) {
           result = (xmlhttp.responseText).replace(/^\s*$[\n\r]{1,}/gm, '');
@@ -34,7 +34,7 @@ class ViewerComponent {
 
 
       readServerData(response) {
-        console.log("In readServerData response : " + response);
+        //console.log("In readServerData response : " + response);
         if(response === null )
         {
           alert(" Error in reading your images.Please check if all requirements are provided.");
@@ -46,7 +46,8 @@ class ViewerComponent {
           this.imgArray[0] = this.imgArray[this.imgArray.length - 1] + this.imgArray[0];
           this.imgArray.splice(this.imgArray.length - 1, 1);
 
-          console.log("Array : " + this.imgArray);
+
+          console.log("Array : " + this.trimSRC(this.imgArray));
           //if(this.moduleId === "img_clssfctn_ud")
           //{
           //  Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
@@ -152,16 +153,15 @@ class ViewerComponent {
 
       prev() {}
 
+
+
+
       trimSRC(selctdImgAry)
       {
-        let i = 0;
-        let tempArray = [];
-        for(i;i < this.selected_images.length;i++)
-        {
-          let newSRC = selctdImgAry[i].substring(selctdImgAry[i].lastIndexOf("/") + 1,
-                                                 selctdImgAry[i].length );
-          tempArray[i] = newSRC;
-        }
+        selctdImgAry.forEach(function(item){
+        let newSRC = item.substring(item.lastIndexOf("/") + 1,item.length );
+          tempArray.push(newSRC);
+        });
         return tempArray;
       }
 
