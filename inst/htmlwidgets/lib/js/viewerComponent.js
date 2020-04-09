@@ -63,6 +63,7 @@ class ViewerComponent {
         let tempArray = [];
         selctdImgAry.forEach(function(item){
         let newSRC = item.substring(item.lastIndexOf("/") + 1,item.length );
+        newSRC = ((newSRC.trim()).replace(/['"]+/g, '')).replace(/(\r\n|\n|\r)/gm,"");
           tempArray.push(newSRC);
         });
         return tempArray;

@@ -8,10 +8,10 @@ dependencies:
   version: 1.7.0
   src: htmlwidgets
   script: ./lib/js/sngl_img_vwr_main.js
-- name: viewerHelper
-  version: 1.7.0
-  src: htmlwidgets
-  script: ./lib/js/viewerHelper.js
+#- name: viewerHelper
+#  version: 1.7.0
+#  src: htmlwidgets
+#  script: ./lib/js/viewerHelper.js
 - name: viewerComponent
   version: 1.7.0
   src: htmlwidgets
