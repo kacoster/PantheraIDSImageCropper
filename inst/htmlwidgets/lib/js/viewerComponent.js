@@ -14,7 +14,7 @@ class ViewerComponent {
       {
         console.log("In fetchServerData moduleId : " + this.moduleId);
         //console.log(" DATA : " + this.loadFile(csvfile));
-        this.readServerData(this.loadFile(this.csvfile));
+        this.readServerData(this.loadFile());
        //
       }
 
