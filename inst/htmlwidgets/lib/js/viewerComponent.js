@@ -10,19 +10,19 @@ class ViewerComponent {
       }
       // fetchServerData
 
-      fetchServerData()
+      fetchServerData(file)
       {
         console.log("In fetchServerData moduleId : " + this.moduleId);
         //console.log(" DATA : " + this.loadFile(csvfile));
-        this.readServerData(this.loadFile());
+        this.readServerData(this.loadFile(file));
        //
       }
 
-      loadFile() {
-        console.log("In loadFile : " +  this.csvfile);
+      loadFile(file) {
+        console.log("In loadFile : " +  file);
         let result = null;
         let xmlhttp = new XMLHttpRequest();
-        xmlhttp.open("GET", this.csvfile, false);
+        xmlhttp.open("GET", file, false);
         xmlhttp.send();
         if (xmlhttp.status==200) {
           result = (xmlhttp.responseText).replace(/^\s*$[\n\r]{1,}/gm, '');

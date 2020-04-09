@@ -21,7 +21,7 @@ HTMLWidgets.widget({
                 function(mesg) {
                    console.log("Handler spcs_idntfctn_extrt_id_button_rf_1");
                   let spcs_idntfctns_prmry_img = new ViewerComponent("spcs_idntfctn_id_rf_1","img_idntfctn_prmry.csv");
-                  spcs_idntfctns_prmry_img.fetchServerData();
+                  spcs_idntfctns_prmry_img.fetchServerData("img_idntfctn_prmry.csv");
                   //resetProps();
                 }
         );
@@ -30,7 +30,7 @@ HTMLWidgets.widget({
                 function(mesg) {
                   console.log("Handler spcs_idntfctn_extrt_id_button_rf_2");
                   let spcs_idntfctns_scndry_img = new ViewerComponent("spcs_idntfctn_id_rf_2","img_idntfctn_scndry.csv");
-                  spcs_idntfctns_scndry_img.fetchServerData();
+                  spcs_idntfctns_scndry_img.fetchServerData("img_idntfctn_scndry.csv");
                   // nextPrevClicked("1");
                   //resetProps(); spcs_idntfctns_prmry_img
                 }
