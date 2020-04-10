@@ -100,30 +100,28 @@ class ViewerComponent {
 
         }
         else{
-           console.log($('#'+this.moduleId+' img' ).attr('src'));
+           console.log("Before next : " + $('#'+this.moduleId+' img' ).attr('src'));
+           $('div.event img').attr('src', this.imgArray[this.currentIndex+1] );
+           console.log("After next : " + $('#'+this.moduleId+' img' ).attr('src'));
+           this.currentIndex++;
         }
 
     }
 
     prev() {
-      console.log("Prev Clicked");
-         nextPrevClicked("1");
-         this.batnum--;
-      if (this.batnum > 0 ) {
-         Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
-            (this.batnum+1) + " / " + this.getBatchNumber());
-        this.imgloop(this.displayImages(this.imgNumb ,this.batnum));
-        this.selected_images.length = 0;
-        this.getCurrClckdImg("clssfctn_slctd_img","");
+      if(this.currentIndex == 0){
+        // first image
       }else{
-         Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
-           1 + " / " + this.getBatchNumber());
-        this.imgloop(this.displayImages(this.imgNumb, 0));
-        this.selected_images.length = 0;
-         this.getCurrClckdImg("clssfctn_slctd_img","");
-        this.batnum = 0;
+
+           console.log("Before prev : " + $('#'+this.moduleId+' img' ).attr('src'));
+           $('div.event img').attr('src', this.imgArray[this.currentIndex-1] );
+           console.log("After prev : " + $('#'+this.moduleId+' img' ).attr('src'));
+           this.currentIndex--;
+
       }
-    }
+
+  }
+
 
 
 
