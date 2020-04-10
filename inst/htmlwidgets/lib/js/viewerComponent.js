@@ -145,12 +145,18 @@ class ViewerComponent {
 
   imgexist(image_url){
 
-    $.get(image_url)
-    .done(function() {
-        return true;
-    }).fail(function() {
+   console.log("In imgexist : " +  image_url);
+        //let result = null;
+        let xmlhttp = new XMLHttpRequest();
+        xmlhttp.open("GET", image_url, false);
+        xmlhttp.send();
+        if (xmlhttp.status==200) {
+          //result = (xmlhttp.responseText).replace(/^\s*$[\n\r]{1,}/gm, '');
+          console.log("In imgexist : " +  image_url + "true");
+          return true;
+        }
+        console.log("In imgexist : " +  image_url + "false");
         return false;
-    });
   }
 
 
