@@ -50,7 +50,7 @@ class ViewerComponent {
 
       displayImage(){
         if(this.moduleId === "spcs_idntfctn_id_rf_1"){
-          setCanvas( this.moduleId,'default.JPG');
+          setCanvas( this.moduleId,'/ids_volume/data/images/S47_20180408_20180611/images/S47__Station4__Camera1__CAM43313__2018-04-24__20-31-50.JPG');
           console.log("ModuleID : " + $('.rf_1_container').attr('id'));
         }
         else if(this.moduleId === "spcs_idntfctn_id_rf_2"){
