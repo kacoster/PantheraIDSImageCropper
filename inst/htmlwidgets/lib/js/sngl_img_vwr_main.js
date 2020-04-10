@@ -13,8 +13,14 @@
 
   var Cropper = window.Cropper;
   //var URL = window.URL || window.webkitURL;
-  console.log("img exist : " +  $('#'+targetID).find( "img" ).length);
-  $('#'+targetID).prepend($('<img>',{id:'currnt-img',src:imgSrc,alt:'camtrap'}));
+  console.log("Exist test : " + $('#'+this.moduleId+' img' ).length );
+
+  if ( $('#'+this.moduleId+' img' ).length ) {
+    console.log("img exist : ");
+  }else{
+     $('#'+targetID).prepend($('<img>',{id:'currnt-img',src:imgSrc,alt:'camtrap'}));
+  }
+
   var container = document.querySelector('#'+targetID);
   console.log(" container : " + container);
   var image = container.getElementsByTagName('img').item(0);
