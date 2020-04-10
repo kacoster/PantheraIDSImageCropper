@@ -91,6 +91,11 @@ class ViewerComponent {
       }
 
       // $('div.event img').attr('src', '/anything');
+      reset(){
+         this.currentIndex = 0;
+         $('#'+this.moduleId+' img' ).attr('src', this.imgArray[this.currentIndex] );
+
+      }
 
       next() {
 

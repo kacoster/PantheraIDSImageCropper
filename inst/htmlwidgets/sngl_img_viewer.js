@@ -43,6 +43,8 @@ HTMLWidgets.widget({
         Shiny.addCustomMessageHandler("spcs_idntfctn_prev_button_rf_1",
                 function(mesg) {
                    console.log("Msg : " + mesg );
+
+                   spcs_idntfctns_prmry_img.prev();
                   //let spcs_idntfctns_prmry_img = new ViewerComponent("spcs_idntfctn_id_rf_1","img_idntfctn_prmry.csv");
                   //console.log("Data 1 : " + loadFile('img_idntfctn_prmry.csv'));
                   //spcs_idntfctns_prmry_img.fetchServerData("img_idntfctn_prmry.csv");
@@ -52,6 +54,7 @@ HTMLWidgets.widget({
         Shiny.addCustomMessageHandler("spcs_idntfctn_prev_button_rf_2",
                 function(mesg) {
                    console.log("Msg : " + mesg );
+                    spcs_idntfctns_scndry_img.prev();
                   //let spcs_idntfctns_prmry_img = new ViewerComponent("spcs_idntfctn_id_rf_1","img_idntfctn_prmry.csv");
                   //console.log("Data 1 : " + loadFile('img_idntfctn_prmry.csv'));
                   //spcs_idntfctns_prmry_img.fetchServerData("img_idntfctn_prmry.csv");
@@ -63,6 +66,7 @@ HTMLWidgets.widget({
         Shiny.addCustomMessageHandler("spcs_idntfctn_reset_button_rf_1",
                 function(mesg) {
                    console.log("Msg : " + mesg );
+                   spcs_idntfctns_prmry_img.reset();
                   //let spcs_idntfctns_prmry_img = new ViewerComponent("spcs_idntfctn_id_rf_1","img_idntfctn_prmry.csv");
                   //console.log("Data 1 : " + loadFile('img_idntfctn_prmry.csv'));
                   //spcs_idntfctns_prmry_img.fetchServerData("img_idntfctn_prmry.csv");
@@ -72,6 +76,7 @@ HTMLWidgets.widget({
         Shiny.addCustomMessageHandler("spcs_idntfctn_reset_button_rf_2",
                 function(mesg) {
                    console.log("Msg : " + mesg );
+                     spcs_idntfctns_scndry_img.reset();
                   //let spcs_idntfctns_prmry_img = new ViewerComponent("spcs_idntfctn_id_rf_1","img_idntfctn_prmry.csv");
                   //console.log("Data 1 : " + loadFile('img_idntfctn_prmry.csv'));
                   //spcs_idntfctns_prmry_img.fetchServerData("img_idntfctn_prmry.csv");
