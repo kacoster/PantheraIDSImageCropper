@@ -13,7 +13,7 @@
 
   var Cropper = window.Cropper;
   //var URL = window.URL || window.webkitURL;
-  console.log("img exist : " +  $('#'+targetID).find( "img" ));
+  console.log("img exist : " +  $('#'+targetID).find( "img" ).length);
   $('#'+targetID).prepend($('<img>',{id:'currnt-img',src:imgSrc,alt:'camtrap'}));
   var container = document.querySelector('#'+targetID);
   console.log(" container : " + container);
