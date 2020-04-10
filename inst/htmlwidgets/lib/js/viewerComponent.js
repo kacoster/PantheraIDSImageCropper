@@ -5,7 +5,7 @@ class ViewerComponent {
         this.csvfile = csvfile;
         this.moduleId =moduleId;
         this.imgArray = [];
-        this.currentImg = "";
+        this.currentIndex = 0;
         this.result = [];
       }
       // fetchServerData
@@ -50,11 +50,11 @@ class ViewerComponent {
 
       displayImage(){
         if(this.moduleId === "spcs_idntfctn_id_rf_1"){
-          setCanvas( this.moduleId,'/ids_volume/data/images/S47_20180408_20180611/images/S47__Station4__Camera1__CAM43313__2018-04-24__20-31-50.JPG');
+          setCanvas( this.moduleId,this.imgArray[0]);
           console.log("ModuleID : " + $('.rf_1_container').attr('id'));
         }
         else if(this.moduleId === "spcs_idntfctn_id_rf_2"){
-          setCanvas( this.moduleId,'S12.JPG');
+          setCanvas( this.moduleId,this.imgArray[0]);
           console.log("ModuleID : " + $('.rf_2_container').attr('id'));
         }else{
 
@@ -63,19 +63,21 @@ class ViewerComponent {
 
 
       readServerData(response) {
+        let respArray = [];
         //console.log("In readServerData response : " + response);
         if(response === null )
         {
           alert(" Error in reading your images.Please check if all requirements are provided.");
         }
         else{
-          this.imgArray = response.split(',');
-          this.imgArray.splice(0, 1);
-          this.imgArray[0] = this.imgArray[0].replace("Source", "");
-          this.imgArray[0] = this.imgArray[this.imgArray.length - 1] + this.imgArray[0];
-          this.imgArray.splice(this.imgArray.length - 1, 1);
+          respArray = response.split(',');
+          respArray.splice(0, 1);
+          respArray[0] = respArray[0].replace("Source", "");
+          respArray[0] = respArray[respArray.length - 1] + respArray[0];
+          respArray.splice(respArray.length - 1, 1);
 
-          console.log("New Arry : " + this.processImgSrc(this.imgArray));
+
+          this.imgArray =  this.processImgSrc(respArray);
           this.displayImage();
 
           //console.log("Array : " + this.trimSRC(this.imgArray));
