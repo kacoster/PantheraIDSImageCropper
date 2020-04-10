@@ -14,10 +14,7 @@
   if ( $('#'+targetID+' img' ).length ) {
     console.log("img exist : ");
   }else{
-     $('#'+targetID).prepend($('<img>',{id:'currnt-img',src:imgSrc,alt:'camtrap',
-                                        onError:'this.onerror=null;this.src="/srv/shiny-server/www/PantheraIDS_image_not_found_2.jpg"'}
-                                        )
-                            );
+     $('#'+targetID).prepend($('<img>',{id:'currnt-img',src:imgSrc,alt:'camtrap'}));
   }
 
   var container = document.querySelector('#'+targetID);
