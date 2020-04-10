@@ -13,9 +13,9 @@
 
   var Cropper = window.Cropper;
   //var URL = window.URL || window.webkitURL;
-  console.log("Exist test : " + $('#'+this.moduleId+' img' ).length );
+  console.log("Exist test : " + $('#'+targetID+' img' ).length );
 
-  if ( $('#'+this.moduleId+' img' ).length ) {
+  if ( $('#'+targetID+' img' ).length ) {
     console.log("img exist : ");
   }else{
      $('#'+targetID).prepend($('<img>',{id:'currnt-img',src:imgSrc,alt:'camtrap'}));
