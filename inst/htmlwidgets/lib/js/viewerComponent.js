@@ -101,7 +101,7 @@ class ViewerComponent {
         }
         else{
            console.log("Before next : " + $('#'+this.moduleId+' img' ).attr('src'));
-           $('div.event img').attr('src', this.imgArray[this.currentIndex+1] );
+           $('#'+this.moduleId+' img' ).attr('src', this.imgArray[this.currentIndex+1] );
            console.log("After next : " + $('#'+this.moduleId+' img' ).attr('src'));
            this.currentIndex++;
         }
@@ -114,7 +114,7 @@ class ViewerComponent {
       }else{
 
            console.log("Before prev : " + $('#'+this.moduleId+' img' ).attr('src'));
-           $('div.event img').attr('src', this.imgArray[this.currentIndex-1] );
+           $('#'+this.moduleId+' img' ).attr('src', this.imgArray[this.currentIndex-1] );
            console.log("After prev : " + $('#'+this.moduleId+' img' ).attr('src'));
            this.currentIndex--;
 
