@@ -38,9 +38,13 @@ class ViewerComponent {
 
           let tempArray = [];
           arry.forEach(function(item){
+            //console.log("item : " + item);
             let src  = ((item.trim()).replace(/['"]+/g, '')).replace(/(\r\n|\n|\r)/gm,"");
+            //console.log("item src : " + src);
               tempArray.push(src);
           });
+
+          return tempArray;
 
       }
 
