@@ -41,7 +41,7 @@ HTMLWidgets.widget({
         // Handle previous image buttons
         Shiny.addCustomMessageHandler("spcs_idntfctn_prev_button_rf_1",
                 function(mesg) {
-                   console.log("Msg : " + msg );
+                   console.log("Msg : " + mesg );
                   //let spcs_idntfctns_prmry_img = new ViewerComponent("spcs_idntfctn_id_rf_1","img_idntfctn_prmry.csv");
                   //console.log("Data 1 : " + loadFile('img_idntfctn_prmry.csv'));
                   //spcs_idntfctns_prmry_img.fetchServerData("img_idntfctn_prmry.csv");
@@ -50,7 +50,7 @@ HTMLWidgets.widget({
         );
         Shiny.addCustomMessageHandler("spcs_idntfctn_prev_button_rf_2",
                 function(mesg) {
-                   console.log("Msg : " + msg );
+                   console.log("Msg : " + mesg );
                   //let spcs_idntfctns_prmry_img = new ViewerComponent("spcs_idntfctn_id_rf_1","img_idntfctn_prmry.csv");
                   //console.log("Data 1 : " + loadFile('img_idntfctn_prmry.csv'));
                   //spcs_idntfctns_prmry_img.fetchServerData("img_idntfctn_prmry.csv");
@@ -61,7 +61,7 @@ HTMLWidgets.widget({
         // Hanle reset buttons
         Shiny.addCustomMessageHandler("spcs_idntfctn_reset_button_rf_1",
                 function(mesg) {
-                   console.log("Msg : " + msg );
+                   console.log("Msg : " + mesg );
                   //let spcs_idntfctns_prmry_img = new ViewerComponent("spcs_idntfctn_id_rf_1","img_idntfctn_prmry.csv");
                   //console.log("Data 1 : " + loadFile('img_idntfctn_prmry.csv'));
                   //spcs_idntfctns_prmry_img.fetchServerData("img_idntfctn_prmry.csv");
@@ -70,7 +70,7 @@ HTMLWidgets.widget({
         );
         Shiny.addCustomMessageHandler("spcs_idntfctn_reset_button_rf_2",
                 function(mesg) {
-                   console.log("Msg : " + msg );
+                   console.log("Msg : " + mesg );
                   //let spcs_idntfctns_prmry_img = new ViewerComponent("spcs_idntfctn_id_rf_1","img_idntfctn_prmry.csv");
                   //console.log("Data 1 : " + loadFile('img_idntfctn_prmry.csv'));
                   //spcs_idntfctns_prmry_img.fetchServerData("img_idntfctn_prmry.csv");
@@ -81,7 +81,7 @@ HTMLWidgets.widget({
         // Hamdle next image buttons
         Shiny.addCustomMessageHandler("spcs_idntfctn_next_button_rf_1",
                 function(mesg) {
-                   console.log("Msg : " + msg );
+                   console.log("Msg : " + mesg );
                   //let spcs_idntfctns_prmry_img = new ViewerComponent("spcs_idntfctn_id_rf_1","img_idntfctn_prmry.csv");
                   //console.log("Data 1 : " + loadFile('img_idntfctn_prmry.csv'));
                   //spcs_idntfctns_prmry_img.fetchServerData("img_idntfctn_prmry.csv");
@@ -90,7 +90,7 @@ HTMLWidgets.widget({
         );
         Shiny.addCustomMessageHandler("spcs_idntfctn_next_button_rf_2",
                 function(mesg) {
-                   console.log("Msg : " + msg );
+                   console.log("Msg : " + mesg );
                   //let spcs_idntfctns_prmry_img = new ViewerComponent("spcs_idntfctn_id_rf_1","img_idntfctn_prmry.csv");
                   //console.log("Data 1 : " + loadFile('img_idntfctn_prmry.csv'));
                   //spcs_idntfctns_prmry_img.fetchServerData("img_idntfctn_prmry.csv");
