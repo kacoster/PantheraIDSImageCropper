@@ -1,12 +1,8 @@
  function setCanvas(targetID,imgSrc) {
   'use strict';
 
-
-
-
   console.log("In main.js");
     // Target different element class here by differentiating the container class
-
 
   //$( '#'+targetClass ).append(" <img src="" alt="">" );
 
