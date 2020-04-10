@@ -2619,15 +2619,7 @@ console.log("In cp.js");
      * @param {Event} _originalEvent - The original event if any.
      * @returns {Cropper} this
      */
-
-     zoom: function(e) {
-                console.log('zoom', e.detail.ratio);
-                if (e.detail.ratio > 1) {
-                    e.preventDefault();
-                    $(this).cropper('zoomTo', 1);
-                }
-    },
-   /** zoom: function zoom(ratio, _originalEvent) {
+    zoom: function zoom(ratio, _originalEvent) {
       var canvasData = this.canvasData;
       ratio = Number(ratio);
 
@@ -2640,7 +2632,7 @@ console.log("In cp.js");
       return this.zoomTo(canvasData.width * ratio / canvasData.naturalWidth, null, _originalEvent);
     },
 
-
+    /**
      * Zoom the canvas to an absolute ratio
      * @param {number} ratio - The target ratio.
      * @param {Object} pivot - The zoom pivot point coordinate.
