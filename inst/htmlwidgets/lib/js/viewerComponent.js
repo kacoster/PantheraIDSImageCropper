@@ -16,7 +16,7 @@ class ViewerComponent {
         console.log("Fetched " + this.loadFile(file) );
         //console.log(" DATA : " + this.loadFile(csvfile));
         this.readServerData(this.loadFile(file));
-        setCanvas( this.moduleId);
+
        //((ar[i].trim()).replace(/['"]+/g, '')).replace(/(\r\n|\n|\r)/gm,"");
       }
 
@@ -36,9 +36,11 @@ class ViewerComponent {
 
       displayImage(){
         if(this.moduleId === "spcs_idntfctn_id_rf_1"){
+          setCanvas( this.moduleId,'default.JPG');
           console.log("ModuleID : " + $('.rf_1_container').attr('id'));
         }
         else if(this.moduleId === "spcs_idntfctn_id_rf_2"){
+          setCanvas( this.moduleId,'S12.JPG');
           console.log("ModuleID : " + $('.rf_2_container').attr('id'));
         }else{
 
