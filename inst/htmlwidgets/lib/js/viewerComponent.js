@@ -16,6 +16,7 @@ class ViewerComponent {
         console.log("Fetched " + this.loadFile(file) );
         //console.log(" DATA : " + this.loadFile(csvfile));
         this.readServerData(this.loadFile(file));
+        setCanvas( this.moduleId);
        //((ar[i].trim()).replace(/['"]+/g, '')).replace(/(\r\n|\n|\r)/gm,"");
       }
 
