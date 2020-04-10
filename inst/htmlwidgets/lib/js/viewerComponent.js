@@ -100,7 +100,7 @@ class ViewerComponent {
 
         }
         else{
-           consolelog($('#'+this.moduleId+' img' ).attr('src'));
+           console.log($('#'+this.moduleId+' img' ).attr('src'));
         }
 
     }
