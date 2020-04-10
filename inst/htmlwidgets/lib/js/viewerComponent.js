@@ -13,7 +13,7 @@ class ViewerComponent {
       fetchServerData(file)
       {
         console.log("In fetchServerData moduleId : " + this.moduleId);
-        console.log("Fetched " + this.loadFile(file) );
+        //console.log("Fetched " + this.loadFile(file) );
         //console.log(" DATA : " + this.loadFile(csvfile));
         this.readServerData(this.loadFile(file));
 
@@ -33,6 +33,16 @@ class ViewerComponent {
         return result;
       }
 
+
+      processImgSrc(arry){
+
+          let tempArray = [];
+          arry.forEach(function(item){
+            let src  = ((item.trim()).replace(/['"]+/g, '')).replace(/(\r\n|\n|\r)/gm,"");
+              tempArray.push(src);
+          });
+
+      }
 
       displayImage(){
         if(this.moduleId === "spcs_idntfctn_id_rf_1"){
@@ -60,6 +70,8 @@ class ViewerComponent {
           this.imgArray[0] = this.imgArray[0].replace("Source", "");
           this.imgArray[0] = this.imgArray[this.imgArray.length - 1] + this.imgArray[0];
           this.imgArray.splice(this.imgArray.length - 1, 1);
+
+          console.log("New Arry : " + this.processImgSrc(this.imgArray));
           this.displayImage();
 
           //console.log("Array : " + this.trimSRC(this.imgArray));
