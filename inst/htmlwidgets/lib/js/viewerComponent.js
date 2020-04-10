@@ -7,6 +7,7 @@ class ViewerComponent {
         this.imgArray = [];
         this.currentIndex = 0;
         this.result = [];
+        this.errorImg = '/srv/shiny-server/www/PantheraIDS_image_not_found_2.jpg';
       }
       // fetchServerData
 
@@ -49,6 +50,11 @@ class ViewerComponent {
       }
 
       displayImage(){
+
+        console.log("first img exist : " + this.imgexist(this.imgArray[0]));
+        if(this.imgexist(this.imgArray[0]) == false){
+            this.imgArray[0] = this.errorImg;
+        }
         if(this.moduleId === "spcs_idntfctn_id_rf_1"){
           setCanvas( this.moduleId,this.imgArray[0]);
           console.log("ModuleID : " + $('.rf_1_container').attr('id'));
@@ -106,6 +112,10 @@ class ViewerComponent {
         }
         else{
            console.log("Before next : " + $('#'+this.moduleId+' img' ).attr('src'));
+           if(this.imgexist(this.imgArray[this.currentIndex+1]) == false){
+             this.imgArray[this.currentIndex+1] = this.errorImg;
+
+           }
            $('#'+this.moduleId+' img' ).attr('src', this.imgArray[this.currentIndex+1] );
            console.log("After next : " + $('#'+this.moduleId+' img' ).attr('src'));
            this.currentIndex++;
@@ -118,6 +128,11 @@ class ViewerComponent {
         // first image
       }else{
 
+          //  if(this.imgexist(this.imgArray[this.currentIndex+1]) == false){
+          //   this.imgArray[this.currentIndex+1] = this.errorImg;
+          //
+           //}
+
            console.log("Before prev : " + $('#'+this.moduleId+' img' ).attr('src'));
            $('#'+this.moduleId+' img' ).attr('src', this.imgArray[this.currentIndex-1] );
            console.log("After prev : " + $('#'+this.moduleId+' img' ).attr('src'));
@@ -126,6 +141,19 @@ class ViewerComponent {
       }
 
   }
+
+
+  imgexist(image_url){
+
+    $.get(image_url)
+    .done(function() {
+        return true;
+    }).fail(function() {
+        return false;
+    });
+  }
+
+
 
 
 
