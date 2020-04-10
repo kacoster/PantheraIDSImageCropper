@@ -109,7 +109,7 @@ HTMLWidgets.widget({
 
          Shiny.addCustomMessageHandler("spcs_idntfctn_fltr_imgs_button_rf_1",
                 function(mesg) {
-                   console.log("Msg : " + mesg );
+                   console.log("Msg : " + JSON.stringify(mesg) );
                    //spcs_idntfctns_scndry_img.next();
                   //let spcs_idntfctns_prmry_img = new ViewerComponent("spcs_idntfctn_id_rf_1","img_idntfctn_prmry.csv");
                   //console.log("Data 1 : " + loadFile('img_idntfctn_prmry.csv'));
