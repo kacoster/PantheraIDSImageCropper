@@ -90,6 +90,45 @@ class ViewerComponent {
         //this.imgloop(this.displayImages(this.imgNumb,0));
       }
 
+      // $('div.event img').attr('src', '/anything');
+
+      next() {
+
+        if(this.currentIndex == this.imgArray.length-1){
+
+          // last image
+
+        }
+        else{
+           consolelog($('#'+this.moduleId+' img' ).attr('src'));
+        }
+
+    }
+
+    prev() {
+      console.log("Prev Clicked");
+         nextPrevClicked("1");
+         this.batnum--;
+      if (this.batnum > 0 ) {
+         Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
+            (this.batnum+1) + " / " + this.getBatchNumber());
+        this.imgloop(this.displayImages(this.imgNumb ,this.batnum));
+        this.selected_images.length = 0;
+        this.getCurrClckdImg("clssfctn_slctd_img","");
+      }else{
+         Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
+           1 + " / " + this.getBatchNumber());
+        this.imgloop(this.displayImages(this.imgNumb, 0));
+        this.selected_images.length = 0;
+         this.getCurrClckdImg("clssfctn_slctd_img","");
+        this.batnum = 0;
+      }
+    }
+
+
+
+
+
       trimSRC(selctdImgAry)
       {
         let tempArray = [];
@@ -196,52 +235,6 @@ class ViewerComponent {
         }
       }
       // We need a function that maps to diff modules
-      next() {
-
-        if(this.imgArray.indexOf()) //  fruits.indexOf("Apple");
-
-
-
-      nextPrevClicked("1");
-
-      if(this.batnum < this.getBatchNumber()-1){
-            this.batnum++;
-            Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
-            (this.batnum+1) + " / " + this.getBatchNumber());
-            this.imgloop(this.displayImages(this.imgNumb, this.batnum));
-            this.selected_images.length = 0;
-            this.getCurrClckdImg("clssfctn_slctd_img","");
-
-        }else{
-          Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
-            this.getBatchNumber() + " / " + this.getBatchNumber());
-          this.imgNumb(this.displayImages(this.imgNumb, this.getBatchNumber()-1));
-          this.batnum = this.getBatchNumber()-1;
-          this.selected_images.length = 0;
-          this.getCurrClckdImg("clssfctn_slctd_img","");
-        }
-  }
-
-  prev() {
-      console.log("Prev Clicked");
-         nextPrevClicked("1");
-         this.batnum--;
-      if (this.batnum > 0 ) {
-         Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
-            (this.batnum+1) + " / " + this.getBatchNumber());
-        this.imgloop(this.displayImages(this.imgNumb ,this.batnum));
-        this.selected_images.length = 0;
-        this.getCurrClckdImg("clssfctn_slctd_img","");
-      }else{
-         Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
-           1 + " / " + this.getBatchNumber());
-        this.imgloop(this.displayImages(this.imgNumb, 0));
-        this.selected_images.length = 0;
-         this.getCurrClckdImg("clssfctn_slctd_img","");
-        this.batnum = 0;
-      }
-  }
-
 
       // This is specific to tag #
       sendDataToShinny(){
