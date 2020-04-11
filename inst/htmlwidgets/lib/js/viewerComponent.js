@@ -72,12 +72,13 @@ class ViewerComponent {
           setCanvas( this.moduleId,this.imgArray[0]);
           console.log("ModuleID : " + $('.rf_1_container').attr('id'));
         }
-        else if(this.moduleId === "spcs_idntfctn_id_rf_2"){
+        if(this.moduleId === "spcs_idntfctn_id_rf_2"){
           setCanvas( this.moduleId,this.imgArray[0]);
           console.log("ModuleID : " + $('.rf_2_container').attr('id'));
-        }else{
-
         }
+
+        this.sendDataToShinny();
+
       }
 
       restart(){
@@ -133,11 +134,11 @@ class ViewerComponent {
            console.log("Before next : " + $('#'+this.moduleId+' img' ).attr('src'));
            if(this.imgexist(this.imgArray[this.currentIndex+1]) == false){
              this.imgArray[this.currentIndex+1] = this.errorImg;
-
            }
            $('#'+this.moduleId+' img' ).attr('src', this.imgArray[this.currentIndex+1] );
            console.log("After next : " + $('#'+this.moduleId+' img' ).attr('src'));
            this.currentIndex++;
+           this.sendDataToShinny();
         }
 
     }
@@ -146,16 +147,11 @@ class ViewerComponent {
       if(this.currentIndex == 0){
         // first image
       }else{
-
-          //  if(this.imgexist(this.imgArray[this.currentIndex+1]) == false){
-          //   this.imgArray[this.currentIndex+1] = this.errorImg;
-          //
-           //}
-           //console.log("In Prev Array : " + this.imgArray);
            console.log("Before prev : " + $('#'+this.moduleId+' img' ).attr('src'));
            $('#'+this.moduleId+' img' ).attr('src', this.imgArray[this.currentIndex-1] );
            console.log("After prev : " + $('#'+this.moduleId+' img' ).attr('src'));
            this.currentIndex--;
+           this.sendDataToShinny();
 
       }
 
@@ -294,15 +290,9 @@ class ViewerComponent {
 
       // This is specific to tag #
       sendDataToShinny(){
-        if (this.selected_images === undefined || this.selected_images.length === 0) {
-          alert("No Images Selected !!");
-          return ;
-        }
-        else{
-          const copy_selected_images = [...this.selected_images];
-          this.deSelectAll();
-          return copy_selected_images;
-        }
+
+        Shiny.setInputValue(this.moduleId+'_curr_img', this.imgArray[this.currentIndex]);
+        console.log("id : " + this.moduleId+'_curr_img');
       }
 
       placeHolder(imgURL)
