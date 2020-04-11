@@ -80,6 +80,11 @@ class ViewerComponent {
         }
       }
 
+      restart(){
+        this.imgArray.length = 0;
+         this.currentIndex = 0;
+      }
+
 
       readServerData(response) {
         let respArray = [];

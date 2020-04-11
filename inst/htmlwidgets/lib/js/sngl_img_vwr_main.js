@@ -12,6 +12,7 @@
   console.log("Exist test : " + $('#'+targetID+' img' ).length );
 
   if ( $('#'+targetID+' img' ).length ) {
+     $('#'+targetID+' img' ).attr('src',imgSrc );
     console.log("img exist : ");
   }else{
      $('#'+targetID).prepend($('<img>',{id:'currnt-img',src:imgSrc,alt:'camtrap'}));
