@@ -16,12 +16,14 @@ class ViewerComponent {
         console.log("In fetchServerData moduleId : " + this.moduleId);
         //console.log("Fetched " + this.loadFile(file) );
         //console.log(" DATA : " + this.loadFile(csvfile));
-        this.readServerData(this.loadFile(file));
+        //this.readServerData(this.loadFile(file));
+
+         loadFile(file).then(data => this.readServerData(data));
 
        //((ar[i].trim()).replace(/['"]+/g, '')).replace(/(\r\n|\n|\r)/gm,"");
       }
 
-      loadFile(file) {
+      /*loadFile(file) {
         console.log("In loadFile : " +  file);
         let result = null;
         let xmlhttp = new XMLHttpRequest();
@@ -32,7 +34,16 @@ class ViewerComponent {
           return result;
         }
         return result;
-      }
+      }*/
+
+      //loadFile1(file){
+      //
+      //  IXMLHTTPRequest http = CreateComObject("Msxml2.XMLHTTP.6.0");
+      //  http.open("GET", "http://www.bankofcanada.ca/stat/fx-xml.xml", False, "", "");
+      //  http.setRequestHeader("Cache-Control", "max-age=0");
+      //  http.send();
+      //
+      //}
 
 
       processImgSrc(arry){

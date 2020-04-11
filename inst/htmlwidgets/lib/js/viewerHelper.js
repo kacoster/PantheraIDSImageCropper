@@ -7,15 +7,34 @@
 //  if(moduleId === "ct_vldt_img_trggr_tbl_vldtn_12"){setValidationArray(loadFile(csvfile),12)}
 //}
 
-function loadFile(filename) {
+async function loadFile(filename) {
   //console.log("In loadFile");
-  let result = null;
-  let xmlhttp = new XMLHttpRequest();
-  xmlhttp.open("GET", filename, false);
-  xmlhttp.send();
-  if (xmlhttp.status==200) {
-    result = (xmlhttp.responseText).replace(/^\s*$[\n\r]{1,}/gm, '');
-    return result;
-  }
-  return result;
+  let response = await fetch(filename,{cache: "no-cache"});
+            //proceed once the first promise is resolved.
+    if(response.ok){
+      let data = await response.text();
+      return (data.replace(/^\s*$[\n\r]{1,}/gm, ''));
+    }
+    return 0;
 }
+
+/*async function getData(filename) 
+        {
+            //await the response of the fetch call
+           let response = await fetch(filename,{cache: "no-cache"});
+            //proceed once the first promise is resolved.
+            if(response.ok){
+              let data = await response.text();
+              //console.log(response.status);
+              return (data.replace(/^\s*$[\n\r]{1,}/gm, ''));
+            }
+            return 0;
+            
+          
+            //proceed only when the second promise is resolved
+          
+    } 
+//call getData function
+loadFile()
+.then(data => console.log(data));//log t*/ 
+
