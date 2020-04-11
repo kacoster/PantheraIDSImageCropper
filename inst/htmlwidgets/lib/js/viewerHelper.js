@@ -13,7 +13,7 @@ async function loadFile(filename) {
             //proceed once the first promise is resolved.
     if(response.ok){
       let data = await response.text();
-      console.log("In new loadFile : " + data);
+      //console.log("In new loadFile : " + data);
       return (data.replace(/^\s*$[\n\r]{1,}/gm, ''));
     }
     return 0;
