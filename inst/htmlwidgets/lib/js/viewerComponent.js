@@ -62,6 +62,8 @@ class ViewerComponent {
 
       displayImage(){
 
+        console.log("In displayImage Array : " + this.imgArray);
+
         console.log("first img exist : " + this.imgexist(this.imgArray[0]));
         if(this.imgexist(this.imgArray[0]) == false){
             this.imgArray[0] = this.errorImg;
@@ -122,6 +124,7 @@ class ViewerComponent {
 
         }
         else{
+            console.log("In Next Array : " + this.imgArray);
            console.log("Before next : " + $('#'+this.moduleId+' img' ).attr('src'));
            if(this.imgexist(this.imgArray[this.currentIndex+1]) == false){
              this.imgArray[this.currentIndex+1] = this.errorImg;
@@ -143,7 +146,7 @@ class ViewerComponent {
           //   this.imgArray[this.currentIndex+1] = this.errorImg;
           //
            //}
-
+           console.log("In Prev Array : " + this.imgArray);
            console.log("Before prev : " + $('#'+this.moduleId+' img' ).attr('src'));
            $('#'+this.moduleId+' img' ).attr('src', this.imgArray[this.currentIndex-1] );
            console.log("After prev : " + $('#'+this.moduleId+' img' ).attr('src'));

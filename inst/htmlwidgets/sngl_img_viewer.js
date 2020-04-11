@@ -24,6 +24,7 @@ HTMLWidgets.widget({
                    console.log("Handler spcs_idntfctn_extrt_id_button_rf_1");
 
                   //console.log("Data 1 : " + loadFile('img_idntfctn_prmry.csv'));
+                  spcs_idntfctns_prmry_img.imgArray.length = 0;
                   spcs_idntfctns_prmry_img.fetchServerData("img_idntfctn_prmry.csv");
                   //resetProps();
                 }
@@ -32,6 +33,7 @@ HTMLWidgets.widget({
          Shiny.addCustomMessageHandler("spcs_idntfctn_extrt_id_button_rf_2",
                 function(mesg) {
                   console.log("Handler spcs_idntfctn_extrt_id_button_rf_2");
+                  spcs_idntfctns_scndry_img.imgArray.length = 0;
                    //onsole.log("Data 2 : " + loadFile('img_idntfctn_scndry.csv'));
                   spcs_idntfctns_scndry_img.fetchServerData("img_idntfctn_scndry.csv");
                   // nextPrevClicked("1");
