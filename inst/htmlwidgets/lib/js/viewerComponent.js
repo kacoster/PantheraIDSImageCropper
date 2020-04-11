@@ -135,8 +135,12 @@ class ViewerComponent {
     }
 
     sendDataToShinny(){
+      let src = this.imgArray[this.currentIndex];
 
-        Shiny.setInputValue(this.moduleId+'_curr_img', this.imgArray[this.currentIndex]);
+      let imgname = src.substring(src.lastIndexOf("/") + 1,
+              src.length );
+
+        Shiny.setInputValue(this.moduleId+'_curr_img', imgname);
         console.log("id : " + this.moduleId+'_curr_img');
     }
 
