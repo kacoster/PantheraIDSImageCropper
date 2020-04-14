@@ -7,7 +7,7 @@
  *
  * Date: 2019-10-04T04:33:48.372Z
  */
-console.log("In cp.js v 1");
+console.log("In cp.js");
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
   typeof define === 'function' && define.amd ? define(factory) :
@@ -253,32 +253,7 @@ console.log("In cp.js v 1");
     zoom: null
   };
 
-  var TEMPLATE = 
-  '<div class="cropper-containerr" touch-action="none">' + 
-      '<div class="cropper-wrap-box">' + 
-              '<div class="cropper-canvass"></div>' + 
-      '</div>' + 
-      '<div class="cropper-drag-boxx"></div>' + 
-      '<div class="cropper-crop-boxx">' + 
-            '<span class="cropper-view-box"></span>' + 
-            '<span class="cropper-dashedd dashed-h"></span>' +
-            '<span class="cropper-dashedd dashed-v"></span>' + 
-            '<span class="cropper-centerr"></span>' + 
-            '<span class="cropper-facee"></span>' + 
-            '<span class="cropper-linee line-e" data-cropper-action="e"></span>' + 
-            '<span class="cropper-linee line-n" data-cropper-action="n"></span>' + 
-            '<span class="cropper-linee line-w" data-cropper-action="w"></span>' + 
-            '<span class="cropper-linee line-s" data-cropper-action="s"></span>' + 
-            '<span class="cropper-pointt point-e" data-cropper-action="e"></span>' + 
-            '<span class="cropper-pointt point-n" data-cropper-action="n"></span>' + 
-            '<span class="cropper-pointt point-w" data-cropper-action="w"></span>' + 
-            '<span class="cropper-pointt point-s" data-cropper-action="s"></span>' + 
-            '<span class="cropper-pointt point-ne" data-cropper-action="ne"></span>' + 
-            '<span class="cropper-pointt point-nw" data-cropper-action="nw"></span>' + 
-            '<span class="cropper-pointt point-sw" data-cropper-action="sw"></span>' + 
-            '<span class="cropper-pointt point-se" data-cropper-action="se"></span>' + 
-      '</div>' + 
-  '</div>';
+  var TEMPLATE = '<div class="cropper-container" touch-action="none">' + '<div class="cropper-wrap-box">' + '<div class="cropper-canvas"></div>' + '</div>' + '<div class="cropper-drag-box"></div>' + '<div class="cropper-crop-box">' + '<span class="cropper-view-box"></span>' + '<span class="cropper-dashed dashed-h"></span>' + '<span class="cropper-dashed dashed-v"></span>' + '<span class="cropper-center"></span>' + '<span class="cropper-face"></span>' + '<span class="cropper-line line-e" data-cropper-action="e"></span>' + '<span class="cropper-line line-n" data-cropper-action="n"></span>' + '<span class="cropper-line line-w" data-cropper-action="w"></span>' + '<span class="cropper-line line-s" data-cropper-action="s"></span>' + '<span class="cropper-point point-e" data-cropper-action="e"></span>' + '<span class="cropper-point point-n" data-cropper-action="n"></span>' + '<span class="cropper-point point-w" data-cropper-action="w"></span>' + '<span class="cropper-point point-s" data-cropper-action="s"></span>' + '<span class="cropper-point point-ne" data-cropper-action="ne"></span>' + '<span class="cropper-point point-nw" data-cropper-action="nw"></span>' + '<span class="cropper-point point-sw" data-cropper-action="sw"></span>' + '<span class="cropper-point point-se" data-cropper-action="se"></span>' + '</div>' + '</div>';
 
   /**
    * Check if the given value is not a number.
@@ -3504,16 +3479,11 @@ console.log("In cp.js v 1");
         var container = element.parentNode;
         var template = document.createElement('div');
         template.innerHTML = TEMPLATE;
-        var cropper = template.querySelector(".".concat(NAMESPACE, "-containerr"));
-        console.log("Line 3508 : " + ".".concat(NAMESPACE, "-containerr"));
-        var canvas = cropper.querySelector(".".concat(NAMESPACE, "-canvass"));
-        console.log("Line 3510 : " + ".".concat(NAMESPACE, "-canvass"));
-        var dragBox = cropper.querySelector(".".concat(NAMESPACE, "-drag-boxx"));
-        console.log("Line 3512 : " + ".".concat(NAMESPACE, "-drag-boxx"));
-        var cropBox = cropper.querySelector(".".concat(NAMESPACE, "-crop-boxx"));
-        console.log("Line 3514 : " + ".".concat(NAMESPACE, "-crop-boxx"));
-        var face = cropBox.querySelector(".".concat(NAMESPACE, "-facee"));
-        console.log("Line 3516 : " + ".".concat(NAMESPACE, "-facee"));
+        var cropper = template.querySelector(".".concat(NAMESPACE, "-container"));
+        var canvas = cropper.querySelector(".".concat(NAMESPACE, "-canvas"));
+        var dragBox = cropper.querySelector(".".concat(NAMESPACE, "-drag-box"));
+        var cropBox = cropper.querySelector(".".concat(NAMESPACE, "-crop-box"));
+        var face = cropBox.querySelector(".".concat(NAMESPACE, "-face"));
         this.container = container;
         this.cropper = cropper;
         this.canvas = canvas;
@@ -3539,11 +3509,11 @@ console.log("In cp.js v 1");
         addClass(cropBox, CLASS_HIDDEN);
 
         if (!options.guides) {
-          addClass(cropBox.getElementsByClassName("".concat(NAMESPACE, "-dashedd")), CLASS_HIDDEN);
+          addClass(cropBox.getElementsByClassName("".concat(NAMESPACE, "-dashed")), CLASS_HIDDEN);
         }
 
         if (!options.center) {
-          addClass(cropBox.getElementsByClassName("".concat(NAMESPACE, "-centerr")), CLASS_HIDDEN);
+          addClass(cropBox.getElementsByClassName("".concat(NAMESPACE, "-center")), CLASS_HIDDEN);
         }
 
         if (options.background) {
@@ -3560,8 +3530,8 @@ console.log("In cp.js v 1");
         }
 
         if (!options.cropBoxResizable) {
-          addClass(cropBox.getElementsByClassName("".concat(NAMESPACE, "-linee")), CLASS_HIDDEN);
-          addClass(cropBox.getElementsByClassName("".concat(NAMESPACE, "-pointt")), CLASS_HIDDEN);
+          addClass(cropBox.getElementsByClassName("".concat(NAMESPACE, "-line")), CLASS_HIDDEN);
+          addClass(cropBox.getElementsByClassName("".concat(NAMESPACE, "-point")), CLASS_HIDDEN);
         }
 
         this.render();
