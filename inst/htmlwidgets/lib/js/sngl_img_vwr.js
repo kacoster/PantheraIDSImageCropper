@@ -254,7 +254,7 @@ console.log("In cp.js");
   };
 
   var TEMPLATE = 
-  '<div class="cropper-container" touch-action="none">' + 
+  '<div class="cropper-containerr" touch-action="none">' + 
       '<div class="cropper-wrap-box">' + 
               '<div class="cropper-canvas"></div>' + 
       '</div>' + 

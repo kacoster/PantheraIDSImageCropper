@@ -2,7 +2,7 @@
  /* Cropper.js v1.5.6 */
  
 
- .cropper-container {
+ .cropper-containerr {
     direction: ltr;
     font-size: 0;
     line-height: 0;
@@ -15,7 +15,7 @@
     user-select: none;
   }
   
-  .cropper-container img {
+  .cropper-containerr img {
     display: block;
     height: 100%;
     image-orientation: 0deg;
