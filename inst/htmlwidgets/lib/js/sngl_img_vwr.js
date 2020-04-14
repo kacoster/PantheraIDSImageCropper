@@ -7,7 +7,7 @@
  *
  * Date: 2019-10-04T04:33:48.372Z
  */
-console.log("In cp.js");
+console.log("In cp.js v3");
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
   typeof define === 'function' && define.amd ? define(factory) :
