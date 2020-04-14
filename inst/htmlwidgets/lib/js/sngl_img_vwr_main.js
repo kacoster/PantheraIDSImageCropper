@@ -1,7 +1,8 @@
+console.log("In main.js sngl vwr out ");
  function setCanvas(targetID,imgSrc) {
   'use strict';
 
-  console.log("In main.js");
+  console.log("In main.js sngl vwr in");
     // Target different element class here by differentiating the container class
 
   //$( '#'+targetClass ).append(" <img src="" alt="">" );

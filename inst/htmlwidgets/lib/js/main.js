@@ -1,6 +1,7 @@
+console.log("main.js latest out ");
 $(function () {
   'use strict';
-  
+  console.log("main.js latest in ");
   var console = window.console || { log: function () {} };
   var URL = window.URL || window.webkitURL;
   var $image = $('#image');
