@@ -254,7 +254,7 @@ console.log("In cp.js v 1");
   };
 
   var TEMPLATE = 
-  '<div class="cropper-container" touch-action="none">' + 
+  '<div class="cropper-containerr" touch-action="none">' + 
       '<div class="cropper-wrap-box">' + 
               '<div class="cropper-canvas"></div>' + 
       '</div>' + 
@@ -3504,8 +3504,8 @@ console.log("In cp.js v 1");
         var container = element.parentNode;
         var template = document.createElement('div');
         template.innerHTML = TEMPLATE;
-        var cropper = template.querySelector(".".concat(NAMESPACE, "-container"));
-        console.log("Line 3508 : " + ".".concat(NAMESPACE, "-container"));
+        var cropper = template.querySelector(".".concat(NAMESPACE, "-containerr"));
+        console.log("Line 3508 : " + ".".concat(NAMESPACE, "-containerr"));
         var canvas = cropper.querySelector(".".concat(NAMESPACE, "-canvas"));
         console.log("Line 3510 : " + ".".concat(NAMESPACE, "-canvas"));
         var dragBox = cropper.querySelector(".".concat(NAMESPACE, "-drag-box"));
