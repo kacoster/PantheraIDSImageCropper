@@ -1,4 +1,8 @@
 dependencies:
+- name: main
+  version: 1.7.0
+  src: htmlwidgets
+  script: ./lib/js/main.js
 - name: cropper
   version: 1.7.0
   src: htmlwidgets
@@ -8,10 +12,6 @@ dependencies:
   version: 1.7.0
   src: htmlwidgets
   script: ./lib/js/jquery-cropper.js
-- name: main
-  version: 1.7.0
-  src: htmlwidgets
-  script: ./lib/js/main.js
   stylesheet: ./lib/css/all.css
 - name: helper
   version: 0.0.1
@@ -25,7 +25,6 @@ dependencies:
   version: 1.8.3
   src: htmlwidgets
   script: ./lib/js/bootstrap.bundle.min.js
-  #stylesheet: ./lib/css/bootstrap.css
 - name: google-analytics
   version: 1.8.3
   src: htmlwidgets
@@ -33,7 +32,6 @@ dependencies:
 - name: bootstrap-min
   version: 1.8.3
   src: htmlwidgets
-  #stylesheet: ./lib/css/bootstrap.min.css
 - name: fontawesome
   version: 1.8.3
   src: htmlwidgets
