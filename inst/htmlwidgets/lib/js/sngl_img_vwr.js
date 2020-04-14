@@ -3504,7 +3504,7 @@ console.log("In cp.js v3");
         var container = element.parentNode;
         var template = document.createElement('div');
         template.innerHTML = TEMPLATE;
-        var cropper = template.querySelector(".".concat(NAMESPACE, "-container"));
+        var cropper = template.querySelector(".".concat(NAMESPACE, "-containerr"));
         var canvas = cropper.querySelector(".".concat(NAMESPACE, "-canvas"));
         var dragBox = cropper.querySelector(".".concat(NAMESPACE, "-drag-box"));
         var cropBox = cropper.querySelector(".".concat(NAMESPACE, "-crop-box"));
