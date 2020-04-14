@@ -1,4 +1,8 @@
 dependencies:
+- name: viewerComponent
+  version: 1.7.0
+  src: htmlwidgets
+  script: ./lib/js/viewerComponent.js
 - name: main
   version: 1.7.0
   src: htmlwidgets
@@ -12,10 +16,6 @@ dependencies:
   version: 1.7.0
   src: htmlwidgets
   script: ./lib/js/viewerHelper.js
-- name: viewerComponent
-  version: 1.7.0
-  src: htmlwidgets
-  script: ./lib/js/viewerComponent.js
 - name: jquery
   version: 0.4.10
   src: htmlwidgets

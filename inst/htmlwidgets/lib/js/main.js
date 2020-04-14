@@ -1,5 +1,5 @@
 console.log("main.js latest out ");
-$(function () {
+function callMain() {
   'use strict';
   console.log("main.js latest in ");
   var console = window.console || { log: function () {} };
@@ -300,4 +300,4 @@ $(function () {
 });
 
    
-});
+}
