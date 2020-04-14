@@ -1,19 +1,13 @@
  function setCanvas(targetID,imgSrc) {
   'use strict';
 
-  console.log("In main.js new ");
+  console.log("In main.js");
     // Target different element class here by differentiating the container class
 
   //$( '#'+targetClass ).append(" <img src="" alt="">" );
 
 
-  //if(targetID == "spcs_idntfctn_id_rf_1"){
-    //var Cropper = window.Cropper;
-    var Cropper = document.querySelector('#'+targetID).Cropper;
-    //spcs_idntfctns_body_ui_prmry_img
-  //}
-
- 
+  var Cropper = window.Cropper;
   //var URL = window.URL || window.webkitURL;
   console.log("Exist test : " + $('#'+targetID+' img' ).length );
 
