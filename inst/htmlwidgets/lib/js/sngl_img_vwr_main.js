@@ -1,4 +1,4 @@
-function setCanvas(targetID,imgSrc) {
+ function setCanvas(targetID,imgSrc) {
   'use strict';
 
   console.log("In main.js");
