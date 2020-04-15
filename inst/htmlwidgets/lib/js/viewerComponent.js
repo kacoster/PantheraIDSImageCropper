@@ -33,11 +33,17 @@ class ViewerComponent {
 
   displayImage(){
 
+    if (typeof $.fn.cropper != "undefined") {
+      alert("Cropper Active");
+      $.fn.cropper.noConflict();
+    }
+
     console.log("first img exist : " + this.imgexist(this.imgArray[0]));
     if(this.imgexist(this.imgArray[0]) == false){
         this.imgArray[0] = this.errorImg;
     }
     if(this.moduleId === "spcs_idntfctn_id_rf_1"){
+      
       setCanvas( this.moduleId,this.imgArray[0]);
       console.log("ModuleID : " + $('.rf_1_container').attr('id'));
     }
