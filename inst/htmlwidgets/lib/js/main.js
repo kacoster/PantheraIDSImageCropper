@@ -1,7 +1,7 @@
  function setCanvas(targetID,imgSrc) {
   'use strict';
 
-  console.log("In main.js");
+  console.log("In main.js combined");
     // Target different element class here by differentiating the container class
 
   //$( '#'+targetClass ).append(" <img src="" alt="">" );
@@ -79,7 +79,7 @@
 
 $(function () {
   'use strict';
-
+  console.log("In main.js combined 2");
   var console = window.console || { log: function () {} };
   var URL = window.URL || window.webkitURL;
   var $image = $('#image');
