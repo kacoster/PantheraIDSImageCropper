@@ -36,9 +36,10 @@ class ViewerComponent {
         let imgID = 'currnt-img_'+targetID.substring(14, targetID.length);
         if ( $('#'+targetID+' img' ).length ) {
             $('#'+targetID+' img' ).attr('src',imgSrc );
-            console.log("img exist : ");
+            console.log("img exist");
         }else{
-           $('#'+targetID).prepend($('<img>',{id:imgID,src:imgSrc,alt:'camtrap'}));
+          console.log("img not exist");
+           $('#'+targetID).append($('<img>',{id:imgID,src:imgSrc,alt:'camtrap'}));
            let image = document.querySelector("#"+imgID);
            new Cropper(image, {
                 viewMode: 3,
