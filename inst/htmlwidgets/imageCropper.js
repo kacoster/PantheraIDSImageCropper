@@ -12,10 +12,11 @@ HTMLWidgets.widget({
 
       renderValue: function(x) {
 
-        console.log("imageCropper 2");
+        console.log("imageCropper 1");
 
         // TODO: code to render the widget, e.g.
         //el.innerText = x.message;
+
       },
 
       resize: function(width, height) {
