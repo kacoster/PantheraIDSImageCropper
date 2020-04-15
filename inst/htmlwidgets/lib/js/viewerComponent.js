@@ -166,6 +166,11 @@ resetHandlers(msg)
 }
 
 setCanvas(targetID,imgSrc) {
+
+  if (typeof $.fn.cropper != "undefined") {
+    alert(" Cropper Active");
+    $.fn.cropper.noConflict();
+  }
   'use strict';
 
   console.log("In main.js sngl vwr in");
