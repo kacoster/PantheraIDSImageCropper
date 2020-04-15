@@ -39,21 +39,23 @@ class ViewerComponent {
             console.log("img exist");
         }else{
           console.log("img not exist");
-           $('#'+targetID).append($('<img>',{id:imgID,src:imgSrc,alt:'camtrap'}));
+          //$('#'+targetID).prepend('<img id="theImg" src="theImg.png" />')
+           $('#'+targetID).prepend($('<img>',{id:imgID,src:imgSrc,alt:'camtrap'}));
            let image = $("#"+imgID);
-           new Cropper(image, {
-                viewMode: 3,
-                dragMode: 'move',
-                autoCrop: false,
-                //autoCropArea: 1,
-                restore: false,
-                modal: false,
-                guides: false,
-                highlight: false,
-                cropBoxMovable: false,
-                cropBoxResizable: false,
-                toggleDragModeOnDblclick: false,
-            });
+           console.logf("image :  " + image);
+           //new Cropper(image, {
+           //     viewMode: 3,
+           //     dragMode: 'move',
+           //     autoCrop: false,
+           //     //autoCropArea: 1,
+           //     restore: false,
+           //     modal: false,
+           //     guides: false,
+           //     highlight: false,
+           //     cropBoxMovable: false,
+           //     cropBoxResizable: false,
+           //     toggleDragModeOnDblclick: false,
+           // });
         }
       }
 
