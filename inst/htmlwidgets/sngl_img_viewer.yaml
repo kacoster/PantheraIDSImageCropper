@@ -13,3 +13,7 @@ dependencies:
   version: 1.0.0
   src: htmlwidgets
   script: ./lib/js/viewerComponent.js
+- name: jquery
+  version: 0.4.10
+  src: htmlwidgets
+  script: ./lib/js/jquery-3.4.1.slim.min.js

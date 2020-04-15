@@ -32,7 +32,7 @@ class ViewerComponent {
       }
 
       helper(targetID,imgSrc){
-        console.log("helper");
+        console.log("helper v1");
         let imgID = 'currnt-img_'+targetID.substring(14, targetID.length);
         if ( $('#'+targetID+' img' ).length ) {
             $('#'+targetID+' img' ).attr('src',imgSrc );
@@ -40,7 +40,7 @@ class ViewerComponent {
         }else{
           console.log("img not exist");
            $('#'+targetID).append($('<img>',{id:imgID,src:imgSrc,alt:'camtrap'}));
-           let image = document.querySelector("#"+imgID);
+           let image = $("#"+imgID);
            new Cropper(image, {
                 viewMode: 3,
                 dragMode: 'move',
