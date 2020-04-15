@@ -1,3 +1,82 @@
+ function setCanvas(targetID,imgSrc) {
+  'use strict';
+
+  console.log("In main.js");
+    // Target different element class here by differentiating the container class
+
+  //$( '#'+targetClass ).append(" <img src="" alt="">" );
+
+
+  var Cropper = window.Cropper;
+  //var URL = window.URL || window.webkitURL;
+  console.log("Exist test : " + $('#'+targetID+' img' ).length );
+
+  if ( $('#'+targetID+' img' ).length ) {
+     $('#'+targetID+' img' ).attr('src',imgSrc );
+    console.log("img exist : ");
+  }else{
+     $('#'+targetID).prepend($('<img>',{id:'currnt-img',src:imgSrc,alt:'camtrap'}));
+  }
+
+  var container = document.querySelector('#'+targetID);
+  console.log(" container : " + container);
+  var image = container.getElementsByTagName('img').item(0);
+  var options = {
+    aspectRatio: 16 / 9,
+    preview: '.img-preview',
+    ready: function (e) {
+      //console.log(e.type);
+    },
+    cropstart: function (e) {
+      //console.log(e.type, e.detail.action);
+    },
+    cropmove: function (e) {
+      //console.log(e.type, e.detail.action);
+    },
+    cropend: function (e) {
+      //console.log(e.type, e.detail.action);
+    },
+    crop: function (e) {
+      var data = e.detail;
+    },
+    zoom: function (e) {
+     // console.log(e.type, e.detail.ratio);
+    }
+  };
+  var cropper = new Cropper(image, options);
+
+
+  document.body.onkeydown = function (event) {
+    var e = event || window.event;
+
+    if (e.target !== this || !cropper || this.scrollTop > 300) {
+      return;
+    }
+
+    switch (e.keyCode) {
+      case 37:
+        e.preventDefault();
+        cropper.move(-1, 0);
+        break;
+
+      case 38:
+        e.preventDefault();
+        cropper.move(0, -1);
+        break;
+
+      case 39:
+        e.preventDefault();
+        cropper.move(1, 0);
+        break;
+
+      case 40:
+        e.preventDefault();
+        cropper.move(0, 1);
+        break;
+    }
+  };
+}
+
 $(function () {
   'use strict';
 
@@ -177,7 +256,7 @@ $(function () {
         case 'getCroppedCanvas':
           if (result) {
 
-            
+
             if (!$download.hasClass('disabled')) {
 
               download.download = uploadedImageName;
@@ -255,7 +334,7 @@ $(function () {
 
   $('#inputImage').change(function () {
     if (typeof (FileReader) != "undefined") {
-      
+
         let dvPreview = $("#ul-layout");
         dvPreview.html("");
         let regex = /^([a-zA-Z0-9\s_\\.\-:])+(.jpg|.jpeg|.gif|.png|.bmp)$/;
@@ -280,7 +359,7 @@ $(function () {
                     let liID = (imagefile.name).slice(0, (imagefile.name).indexOf("."));
                     let myli = '<li id="' + liID + '"><img id="' + imagefile.type + '" style="' + imgsyl + '"  class="' + cl + '" src="' + e.target.result + '"  alt="' + imagefile.name + '" /> </li>';
                     dvPreview.append(myli);
-                    
+
                 }
                 reader.readAsDataURL(file[0]);
             } else {
@@ -295,5 +374,5 @@ $(function () {
 
 });
 
-   
+
 });
