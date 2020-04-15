@@ -1,16 +1,13 @@
-console.log("In main.js sngl vwr out ");
  function setCanvas(targetID,imgSrc) {
   'use strict';
 
-  console.log("In main.js sngl vwr in");
+  console.log("In main.js");
     // Target different element class here by differentiating the container class
 
   //$( '#'+targetClass ).append(" <img src="" alt="">" );
 
-  $.fn.cropper.noConflict();
+
   var Cropper = window.Cropper;
-
-
   //var URL = window.URL || window.webkitURL;
   console.log("Exist test : " + $('#'+targetID+' img' ).length );
 

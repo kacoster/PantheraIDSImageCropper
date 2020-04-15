@@ -38,11 +38,11 @@ class ViewerComponent {
         this.imgArray[0] = this.errorImg;
     }
     if(this.moduleId === "spcs_idntfctn_id_rf_1"){
-      this.setCanvas( this.moduleId,this.imgArray[0]);
+      setCanvas( this.moduleId,this.imgArray[0]);
       console.log("ModuleID : " + $('.rf_1_container').attr('id'));
     }
     if(this.moduleId === "spcs_idntfctn_id_rf_2"){
-      this.setCanvas( this.moduleId,this.imgArray[0]);
+      setCanvas( this.moduleId,this.imgArray[0]);
       console.log("ModuleID : " + $('.rf_2_container').attr('id'));
     }
 
@@ -163,89 +163,6 @@ resetHandlers(msg)
   else{
     Shiny.setInputValue('mssng_srv_imgs', null);
   }
-}
-
-setCanvas(targetID,imgSrc) {
-
-  if (typeof $.fn.cropper != "undefined") {
-    alert(" Cropper Active");
-    $.fn.cropper.noConflict();
-  }
-  'use strict';
-
-  console.log("In main.js sngl vwr in");
-
-  //$.fn.cropper.noConflict();
-  var Cropper = window.Cropper;
-
-  console.log("Exist test : " + $('#'+targetID+' img' ).length );
-
-  if ( $('#'+targetID+' img' ).length ) {
-     $('#'+targetID+' img' ).attr('src',imgSrc );
-    console.log("img exist : ");
-  }else{
-     $('#'+targetID).prepend($('<img>',{id:'currnt-img',src:imgSrc,alt:'camtrap'}));
-  }
-
-  var container = document.querySelector('#'+targetID);
-  console.log(" container : " + container);
-  var image = container.getElementsByTagName('img').item(0);
-  
-  var options = {
-    aspectRatio: 16 / 9,
-    preview: '.img-preview',
-    ready: function (e) {
-      //console.log(e.type);
-    },
-    cropstart: function (e) {
-     
-    },
-    cropmove: function (e) {
-    },
-    cropend: function (e) {
-    },
-    crop: function (e) {
-      var data = e.detail;
-
-     
-    },
-    zoom: function (e) {
-    }
-  };
-  var cropper = new Cropper(image, options);
- 
-
-  document.body.onkeydown = function (event) {
-    var e = event || window.event;
-
-    if (e.target !== this || !cropper || this.scrollTop > 300) {
-      return;
-    }
-
-    switch (e.keyCode) {
-      case 37:
-        e.preventDefault();
-        cropper.move(-1, 0);
-        break;
-
-      case 38:
-        e.preventDefault();
-        cropper.move(0, -1);
-        break;
-
-      case 39:
-        e.preventDefault();
-        cropper.move(1, 0);
-        break;
-
-      case 40:
-        e.preventDefault();
-        cropper.move(0, 1);
-        break;
-    }
-  };
-
-  
 }
 
 

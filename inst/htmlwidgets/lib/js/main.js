@@ -1,8 +1,3 @@
-if (typeof Cropper != "undefined") {
-  alert("manual ID Active");
-  Cropper.noConflict();
-}
-
 $(function () {
   'use strict';
 
