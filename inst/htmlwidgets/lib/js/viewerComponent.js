@@ -43,7 +43,8 @@ class ViewerComponent {
            new Cropper(image, {
                 viewMode: 3,
                 dragMode: 'move',
-                autoCropArea: 1,
+                autoCrop: false,
+                //autoCropArea: 1,
                 restore: false,
                 modal: false,
                 guides: false,
