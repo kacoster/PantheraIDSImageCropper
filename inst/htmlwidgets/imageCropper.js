@@ -12,7 +12,8 @@ HTMLWidgets.widget({
 
       renderValue: function(x) {
 
-        console.log("imageCropper");
+        console.log("imageCropper testing ");
+        callMain();
 
         // TODO: code to render the widget, e.g.
         //el.innerText = x.message;

@@ -23,27 +23,27 @@ dependencies:
   version: 0.4.10
   src: htmlwidgets
   script: ./lib/js/jquery-3.4.1.slim.min.js
-#- name: bootstrap
-#  version: 1.8.3
-#  src: htmlwidgets
-#  script: ./lib/js/bootstrap.bundle.min.js
-#- name: google-analytics
-#  version: 1.8.3
-#  src: htmlwidgets
-#  script: ./lib/js/google-analytics.js
-#- name: bootstrap-min
-#  version: 1.8.3
-#  src: htmlwidgets
-#- name: fontawesome
-#  version: 1.8.3
-#  src: htmlwidgets
-#  stylesheet: ./lib/css/fontawesome.css
-#- name: fontawesome-min
-#  version: 1.8.3
-#  src: htmlwidgets
-#  stylesheet: ./lib/css/fontawesome.min.css
-#- name: all
-#  version: 1.8.3
-#  src: htmlwidgets
-#  stylesheet: ./lib/css/main.css
+- name: bootstrap
+  version: 1.8.3
+  src: htmlwidgets
+  script: ./lib/js/bootstrap.bundle.min.js
+- name: google-analytics
+  version: 1.8.3
+  src: htmlwidgets
+  script: ./lib/js/google-analytics.js
+- name: bootstrap-min
+  version: 1.8.3
+  src: htmlwidgets
+- name: fontawesome
+  version: 1.8.3
+  src: htmlwidgets
+  stylesheet: ./lib/css/fontawesome.css
+- name: fontawesome-min
+  version: 1.8.3
+  src: htmlwidgets
+  stylesheet: ./lib/css/fontawesome.min.css
+- name: all
+  version: 1.8.3
+  src: htmlwidgets
+  stylesheet: ./lib/css/main.css
 

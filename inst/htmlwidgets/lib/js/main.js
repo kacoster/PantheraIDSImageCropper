@@ -1,4 +1,4 @@
-window.onload = function () {
+function callMain() {
   'use strict';
   console.log("New main.js");
   var Cropper = window.Cropper;
