@@ -1,0 +1,15 @@
+# (uncomment to add a dependency)
+dependencies:
+- name: cropper_1
+  version: 1.0.0
+  src: htmlwidgets
+  script: ./lib/js/cropper_v1.js
+  stylesheet: ./lib/css/cropper_v1.css
+- name: viewerHelper
+  version: 1.0.0
+  src: htmlwidgets
+  script: ./lib/js/viewerHelper.js
+- name: viewerComponent
+  version: 1.0.0
+  src: htmlwidgets
+  script: ./lib/js/viewerComponent.js

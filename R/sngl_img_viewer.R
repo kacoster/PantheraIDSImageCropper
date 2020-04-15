@@ -14,7 +14,6 @@ sngl_img_viewer <- function(filename, width = NULL, height = NULL, elementId = N
     height = height,
     targetId = elementId
   )
-
   # create widget
   htmlwidgets::createWidget(
     name = 'sngl_img_viewer',
