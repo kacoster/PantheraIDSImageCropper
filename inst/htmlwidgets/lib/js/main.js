@@ -1,6 +1,6 @@
 $(function () {
   'use strict';
-  Cropper.noConflict();
+  
   var console = window.console || { log: function () {} };
   var URL = window.URL || window.webkitURL;
   var $image = $('#image');
@@ -29,10 +29,17 @@ $(function () {
   var uploadedImageName = 'cropped.jpg';
   var uploadedImageType = 'image/jpeg';
   var uploadedImageURL;
+  var secOrig ="";
 
   // Tooltip
   $('[data-toggle="tooltip"]').tooltip();
-
+  
+  // doc ready place default image
+  $( document ).ready(function() {
+    let src = "default.JPG";
+    $image.cropper('destroy').attr('src', src).cropper(options);
+    
+  });
   // Cropper
   $image.on({
     ready: function (e) {
@@ -53,7 +60,9 @@ $(function () {
     zoom: function (e) {
       console.log(e.type, e.detail.ratio);
     }
+    
   }).cropper(options);
+
 
   // Buttons
   if (!$.isFunction(document.createElement('canvas').getContext)) {
@@ -70,6 +79,14 @@ $(function () {
     $download.addClass('disabled');
   }
 
+  $( "#ul-layout").click(function() {
+    uploadedImageName = event.target.alt;  // the orignal image name is @id
+    uploadedImageType = event.target.id;
+    $image.cropper('destroy').attr('src', event.target.src).cropper(options);
+    $('p#img-name').text(uploadedImageName);
+    console.log("#ul-layout length: " + $('div.cropper-crop-box').length);
+  });
+
   // Options
   $('.docs-toggles').on('change', 'input', function () {
     var $this = $(this);
@@ -83,18 +100,19 @@ $(function () {
     }
 
     if (type === 'checkbox') {
+      console.log("Check Box");
       options[name] = $this.prop('checked');
       cropBoxData = $image.cropper('getCropBoxData');
       canvasData = $image.cropper('getCanvasData');
 
       options.ready = function () {
+        
         $image.cropper('setCropBoxData', cropBoxData);
         $image.cropper('setCanvasData', canvasData);
       };
     } else if (type === 'radio') {
       options[name] = $this.val();
     }
-
     $image.cropper('destroy').cropper(options);
   });
 
@@ -133,18 +151,15 @@ $(function () {
           if (cropped && options.viewMode > 0) {
             $image.cropper('clear');
           }
-
           break;
 
         case 'getCroppedCanvas':
+          //alert("getCroppedCanvas : 2");
           if (uploadedImageType === 'image/jpeg') {
             if (!data.option) {
               data.option = {};
             }
-
-            data.option.fillColor = '#fff';
           }
-
           break;
       }
 
@@ -165,12 +180,20 @@ $(function () {
 
         case 'getCroppedCanvas':
           if (result) {
-            // Bootstrap's Modal
-            $('#getCroppedCanvasModal').modal().find('.modal-body').html(result);
 
             if (!$download.hasClass('disabled')) {
+
               download.download = uploadedImageName;
               $download.attr('href', result.toDataURL(uploadedImageType));
+              $('<a href='+result.toDataURL(uploadedImageType)+' download='+uploadedImageName+' ></a>')[0].click();
+              let id = (uploadedImageName).slice(0, (uploadedImageName).indexOf("."));
+
+              $('#' + id + '').css({
+                'opacity': '0.2',
+                'filter': 'alpha(opacity=40)'
+              });
+              $(".list-unstyled > li ").css("background-color", "yellow");
+
             }
           }
 
@@ -225,38 +248,55 @@ $(function () {
     }
   });
 
-  // Import image
-  var $inputImage = $('#inputImage');
-
-  if (URL) {
-    $inputImage.change(function () {
-      var files = this.files;
-      var file;
-
-      if (!$image.data('cropper')) {
-        return;
-      }
-
-      if (files && files.length) {
-        file = files[0];
-
-        if (/^image\/\w+$/.test(file.type)) {
-          uploadedImageName = file.name;
-          uploadedImageType = file.type;
-
-          if (uploadedImageURL) {
-            URL.revokeObjectURL(uploadedImageURL);
-          }
-
-          uploadedImageURL = URL.createObjectURL(file);
-          $image.cropper('destroy').attr('src', uploadedImageURL).cropper(options);
-          $inputImage.val('');
-        } else {
-          window.alert('Please choose an image file.');
-        }
-      }
-    });
-  } else {
-    $inputImage.prop('disabled', true).parent().addClass('disabled');
+  function addCropperImage(src,imageName,imageType)
+  {
+    uploadedImageName = imageName;
+    uploadedImageType = imageType;
+    $image.cropper('destroy').attr('src', src).cropper(options);
   }
+
+  $('#inputImage').change(function () {
+    if (typeof (FileReader) != "undefined") {
+      
+        let dvPreview = $("#ul-layout");
+        dvPreview.html("");
+        let regex = /^([a-zA-Z0-9\s_\\.\-:])+(.jpg|.jpeg|.gif|.png|.bmp)$/;
+        let count = 0;
+        let files = this.files;
+        $(".list-unstyled > li").css("background-color", "white");
+        $($(this)[0].files).each(function () {
+            let file = $(this);
+            let imagefile = files[count];
+            count++;
+            if (regex.test(file[0].name.toLowerCase())) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    let img = $("<img />");
+                    img.attr("style", "max-height:160px;max-width: 120px;width: auto;height:auto;");
+                    let imgsyl = 'max-height:160px;max-width: 120px;width: auto;height:auto;';
+                    let cl = 'border';
+                    img.attr("src", e.target.result);
+                    img.attr("alt",imagefile.name);
+                    img.attr("id",imagefile.type);
+                    img.attr("class","border");
+                    let liID = (imagefile.name).slice(0, (imagefile.name).indexOf("."));
+                    let myli = '<li id="' + liID + '"><img id="' + imagefile.type + '" style="' + imgsyl + '"  class="' + cl + '" src="' + e.target.result + '"  alt="' + imagefile.name + '" /> </li>';
+                    dvPreview.append(myli);
+                    
+                }
+                reader.readAsDataURL(file[0]);
+            } else {
+                alert(file[0].name + " is not a valid image file.");
+                return false;
+            }
+        });
+        
+        $(".list-unstyled > li").css("background-color", "yellow");
+    } else {
+        alert("This browser does not support HTML5 FileReader.");
+    }
+
+});
+
+   
 });
