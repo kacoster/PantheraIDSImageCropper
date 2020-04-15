@@ -7,7 +7,7 @@ if (typeof Cropper != "undefined") {
   Cropper.noConflict();
 }
 
-onsole.log("Combined scripts");
+console.log("Combined scripts");
 
 $(function () {
   'use strict';
