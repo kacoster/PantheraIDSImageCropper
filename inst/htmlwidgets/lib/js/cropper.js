@@ -123,7 +123,7 @@
     var WINDOW = IS_BROWSER ? window : {};
     var IS_TOUCH_DEVICE = IS_BROWSER ? 'ontouchstart' in WINDOW.document.documentElement : false;
     var HAS_POINTER_EVENT = IS_BROWSER ? 'PointerEvent' in WINDOW : false;
-    var NAMESPACE = 'cropper'; // Actions
+    var NAMESPACE = 'cropperr'; // Actions
   
     var ACTION_ALL = 'all';
     var ACTION_CROP = 'crop';
@@ -1213,20 +1213,20 @@
         var element = this.element,
             options = this.options,
             container = this.container,
-            cropper = this.cropper;
-        addClass(cropper, CLASS_HIDDEN);
+            cropperr = this.cropperr;
+        addClass(cropperr, CLASS_HIDDEN);
         removeClass(element, CLASS_HIDDEN);
         var containerData = {
           width: Math.max(container.offsetWidth, Number(options.minContainerWidth) || 200),
           height: Math.max(container.offsetHeight, Number(options.minContainerHeight) || 100)
         };
         this.containerData = containerData;
-        setStyle(cropper, {
+        setStyle(cropperr, {
           width: containerData.width,
           height: containerData.height
         });
         addClass(element, CLASS_HIDDEN);
-        removeClass(cropper, CLASS_HIDDEN);
+        removeClass(cropperr, CLASS_HIDDEN);
       },
       // Canvas (image wrapper)
       initCanvas: function initCanvas() {
@@ -1702,7 +1702,7 @@
       bind: function bind() {
         var element = this.element,
             options = this.options,
-            cropper = this.cropper;
+            cropperr = this.cropperr;
   
         if (isFunction(options.cropstart)) {
           addListener(element, EVENT_CROP_START, options.cropstart);
@@ -1724,17 +1724,17 @@
           addListener(element, EVENT_ZOOM, options.zoom);
         }
   
-        addListener(cropper, EVENT_POINTER_DOWN, this.onCropStart = this.cropStart.bind(this));
+        addListener(cropperr, EVENT_POINTER_DOWN, this.onCropStart = this.cropStart.bind(this));
   
         if (options.zoomable && options.zoomOnWheel) {
-          addListener(cropper, EVENT_WHEEL, this.onWheel = this.wheel.bind(this), {
+          addListener(cropperr, EVENT_WHEEL, this.onWheel = this.wheel.bind(this), {
             passive: false,
             capture: true
           });
         }
   
         if (options.toggleDragModeOnDblclick) {
-          addListener(cropper, EVENT_DBLCLICK, this.onDblclick = this.dblclick.bind(this));
+          addListener(cropperr, EVENT_DBLCLICK, this.onDblclick = this.dblclick.bind(this));
         }
   
         addListener(element.ownerDocument, EVENT_POINTER_MOVE, this.onCropMove = this.cropMove.bind(this));
@@ -1747,7 +1747,7 @@
       unbind: function unbind() {
         var element = this.element,
             options = this.options,
-            cropper = this.cropper;
+            cropperr = this.cropperr;
   
         if (isFunction(options.cropstart)) {
           removeListener(element, EVENT_CROP_START, options.cropstart);
@@ -1769,17 +1769,17 @@
           removeListener(element, EVENT_ZOOM, options.zoom);
         }
   
-        removeListener(cropper, EVENT_POINTER_DOWN, this.onCropStart);
+        removeListener(cropperr, EVENT_POINTER_DOWN, this.onCropStart);
   
         if (options.zoomable && options.zoomOnWheel) {
-          removeListener(cropper, EVENT_WHEEL, this.onWheel, {
+          removeListener(cropperr, EVENT_WHEEL, this.onWheel, {
             passive: false,
             capture: true
           });
         }
   
         if (options.toggleDragModeOnDblclick) {
-          removeListener(cropper, EVENT_DBLCLICK, this.onDblclick);
+          removeListener(cropperr, EVENT_DBLCLICK, this.onDblclick);
         }
   
         removeListener(element.ownerDocument, EVENT_POINTER_MOVE, this.onCropMove);
@@ -2388,7 +2388,7 @@
               break;
             }
   
-            offset = getOffset(this.cropper);
+            offset = getOffset(this.cropperr);
             left = pointer.startX - offset.left;
             top = pointer.startY - offset.top;
             width = cropBoxData.minWidth;
@@ -2527,11 +2527,11 @@
   
         return this;
       },
-      // Enable (unfreeze) the cropper
+      // Enable (unfreeze) the cropperr
       enable: function enable() {
         if (this.ready && this.disabled) {
           this.disabled = false;
-          removeClass(this.cropper, CLASS_DISABLED);
+          removeClass(this.cropperr, CLASS_DISABLED);
         }
   
         return this;
@@ -2540,7 +2540,7 @@
       disable: function disable() {
         if (this.ready && !this.disabled) {
           this.disabled = true;
-          addClass(this.cropper, CLASS_DISABLED);
+          addClass(this.cropperr, CLASS_DISABLED);
         }
   
         return this;
@@ -2662,7 +2662,7 @@
   
           if (_originalEvent) {
             var pointers = this.pointers;
-            var offset = getOffset(this.cropper);
+            var offset = getOffset(this.cropperr);
             var center = pointers && Object.keys(pointers).length ? getPointersCenter(pointers) : {
               pageX: _originalEvent.pageX,
               pageY: _originalEvent.pageY
@@ -3479,23 +3479,23 @@
           var container = element.parentNode;
           var template = document.createElement('div');
           template.innerHTML = TEMPLATE;
-          var cropper = template.querySelector(".".concat(NAMESPACE, "-container"));
-          var canvas = cropper.querySelector(".".concat(NAMESPACE, "-canvas"));
-          var dragBox = cropper.querySelector(".".concat(NAMESPACE, "-drag-box"));
-          var cropBox = cropper.querySelector(".".concat(NAMESPACE, "-crop-box"));
+          var cropperr = template.querySelector(".".concat(NAMESPACE, "-container"));
+          var canvas = cropperr.querySelector(".".concat(NAMESPACE, "-canvas"));
+          var dragBox = cropperr.querySelector(".".concat(NAMESPACE, "-drag-box"));
+          var cropBox = cropperr.querySelector(".".concat(NAMESPACE, "-crop-box"));
           var face = cropBox.querySelector(".".concat(NAMESPACE, "-face"));
           this.container = container;
-          this.cropper = cropper;
+          this.cropperr = cropperr;
           this.canvas = canvas;
           this.dragBox = dragBox;
           this.cropBox = cropBox;
-          this.viewBox = cropper.querySelector(".".concat(NAMESPACE, "-view-box"));
+          this.viewBox = cropperr.querySelector(".".concat(NAMESPACE, "-view-box"));
           this.face = face;
           canvas.appendChild(image); // Hide the original image
   
           addClass(element, CLASS_HIDDEN); // Inserts the cropper after to the current image
   
-          container.insertBefore(cropper, element.nextSibling); // Show the image if is hidden
+          container.insertBefore(cropperr, element.nextSibling); // Show the image if is hidden
   
           if (!this.isImg) {
             removeClass(image, CLASS_HIDE);
@@ -3517,7 +3517,7 @@
           }
   
           if (options.background) {
-            addClass(cropper, "".concat(NAMESPACE, "-bg"));
+            addClass(cropperr, "".concat(NAMESPACE, "-bg"));
           }
   
           if (!options.highlight) {
@@ -3562,7 +3562,7 @@
           this.ready = false;
           this.unbind();
           this.resetPreview();
-          this.cropper.parentNode.removeChild(this.cropper);
+          this.cropperr.parentNode.removeChild(this.cropperr);
           removeClass(this.element, CLASS_HIDDEN);
         }
       }, {

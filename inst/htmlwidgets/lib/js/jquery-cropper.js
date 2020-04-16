@@ -11,10 +11,10 @@ console.log("jquery-cropper.js");
   Cropper = Cropper && Cropper.hasOwnProperty('default') ? Cropper['default'] : Cropper;
 
   if ($ && $.fn && Cropper) {
-    var AnotherCropper = $.fn.cropper;
-    var NAMESPACE = 'cropper';
+    var AnotherCropper = $.fn.cropperr;
+    var NAMESPACE = 'cropperr';
 
-    $.fn.cropper = function jQueryCropper(option) {
+    $.fn.cropperr = function jQueryCropper(option) {
       for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
         args[_key - 1] = arguments[_key];
       }
@@ -23,25 +23,25 @@ console.log("jquery-cropper.js");
       this.each(function (i, element) {
         var $element = $(element);
         var isDestroy = option === 'destroy';
-        var cropper = $element.data(NAMESPACE);
+        var cropperr = $element.data(NAMESPACE);
 
-        if (!cropper) {
+        if (!cropperr) {
           if (isDestroy) {
             return;
           }
 
           var options = $.extend({}, $element.data(), $.isPlainObject(option) && option);
-          cropper = new Cropper(element, options);
-          $element.data(NAMESPACE, cropper);
+          cropperr = new Cropper(element, options);
+          $element.data(NAMESPACE, cropperr);
         }
 
         if (typeof option === 'string') {
-          var fn = cropper[option];
+          var fn = cropperr[option];
 
           if ($.isFunction(fn)) {
-            result = fn.apply(cropper, args);
+            result = fn.apply(cropperr, args);
 
-            if (result === cropper) {
+            if (result === cropperr) {
               result = undefined;
             }
 
@@ -54,11 +54,11 @@ console.log("jquery-cropper.js");
       return result !== undefined ? result : this;
     };
 
-    $.fn.cropper.Constructor = Cropper;
-    $.fn.cropper.setDefaults = Cropper.setDefaults;
+    $.fn.cropperr.Constructor = Cropper;
+    $.fn.cropperr.setDefaults = Cropper.setDefaults;
 
-    $.fn.cropper.noConflict = function noConflict() {
-      $.fn.cropper = AnotherCropper;
+    $.fn.cropperr.noConflict = function noConflict() {
+      $.fn.cropperr = AnotherCropper;
       return this;
     };
   }

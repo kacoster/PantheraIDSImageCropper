@@ -41,7 +41,7 @@ $(function () {
   // doc ready place default image
   $( document ).ready(function() {
     let src = "default.JPG";
-    $image.cropper('destroy').attr('src', src).cropper(options);
+    $image.cropperr('destroy').attr('src', src).cropperr(options);
   });
   // Cropper
   $image.on({
@@ -63,7 +63,7 @@ $(function () {
     zoom: function (e) {
       console.log(e.type, e.detail.ratio);
     }
-  }).cropper(options);
+  }).cropperr(options);
 
   // Buttons
   if (!$.isFunction(document.createElement('canvas').getContext)) {
@@ -83,7 +83,7 @@ $(function () {
   $( "#ul-layout").click(function() {
     uploadedImageName = event.target.alt;  // the orignal image name is @id
     uploadedImageType = event.target.id;
-    $image.cropper('destroy').attr('src', event.target.src).cropper(options);
+    $image.cropperr('destroy').attr('src', event.target.src).cropperr(options);
     $('p#img-name').text(uploadedImageName);
   });
 
@@ -101,24 +101,24 @@ $(function () {
 
     if (type === 'checkbox') {
       options[name] = $this.prop('checked');
-      cropBoxData = $image.cropper('getCropBoxData');
-      canvasData = $image.cropper('getCanvasData');
+      cropBoxData = $image.cropperr('getCropBoxData');
+      canvasData = $image.cropperr('getCanvasData');
 
       options.ready = function () {
-        $image.cropper('setCropBoxData', cropBoxData);
-        $image.cropper('setCanvasData', canvasData);
+        $image.cropperr('setCropBoxData', cropBoxData);
+        $image.cropperr('setCanvasData', canvasData);
       };
     } else if (type === 'radio') {
       options[name] = $this.val();
     }
-    $image.cropper('destroy').cropper(options);
+    $image.cropperr('destroy').cropperr(options);
   });
 
   // Methods
   $('.docs-buttons').on('click', '[data-method]', function () {
     var $this = $(this);
     var data = $this.data();
-    var cropper = $image.data('cropper');
+    var cropperr = $image.data('cropper');
     var cropped;
     var $target;
     var result;
@@ -127,7 +127,7 @@ $(function () {
       return;
     }
 
-    if (cropper && data.method) {
+    if (cropperr && data.method) {
       data = $.extend({}, data); // Clone a new one
 
       if (typeof data.target !== 'undefined') {
@@ -142,12 +142,12 @@ $(function () {
         }
       }
 
-      cropped = cropper.cropped;
+      cropped = cropperr.cropped;
 
       switch (data.method) {
         case 'rotate':
           if (cropped && options.viewMode > 0) {
-            $image.cropper('clear');
+            $image.cropperr('clear');
           }
           break;
 
@@ -162,12 +162,12 @@ $(function () {
           break;
       }
 
-      result = $image.cropper(data.method, data.option, data.secondOption);
+      result = $image.cropperr(data.method, data.option, data.secondOption);
 
       switch (data.method) {
         case 'rotate':
           if (cropped && options.viewMode > 0) {
-            $image.cropper('crop');
+            $image.cropperr('crop');
           }
 
           break;
@@ -228,22 +228,22 @@ $(function () {
     switch (e.which) {
       case 37:
         e.preventDefault();
-        $image.cropper('move', -1, 0);
+        $image.cropperr('move', -1, 0);
         break;
 
       case 38:
         e.preventDefault();
-        $image.cropper('move', 0, -1);
+        $image.cropperr('move', 0, -1);
         break;
 
       case 39:
         e.preventDefault();
-        $image.cropper('move', 1, 0);
+        $image.cropperr('move', 1, 0);
         break;
 
       case 40:
         e.preventDefault();
-        $image.cropper('move', 0, 1);
+        $image.cropperr('move', 0, 1);
         break;
     }
   });
@@ -253,7 +253,7 @@ $(function () {
     //console.log("File Type :" + imageType);
     uploadedImageName = imageName;
     uploadedImageType = imageType;
-    $image.cropper('destroy').attr('src', src).cropper(options);
+    $image.cropperr('destroy').attr('src', src).cropperr(options);
   }
 
   $('#inputImage').change(function () {
