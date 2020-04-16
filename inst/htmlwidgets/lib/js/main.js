@@ -1,8 +1,10 @@
+
+console.log("main.js");
 if (typeof  Cropper != "undefined") {
-  alert(" Cropper Exist");
+  alert(" Cropper Exist main");
 }
 else{
-  alert(" Cropper NOT Exist");
+  alert(" Cropper NOT Exist main");
 }
 //$.fn.cropper.noConflict();
 //Cropper.noConflict();
