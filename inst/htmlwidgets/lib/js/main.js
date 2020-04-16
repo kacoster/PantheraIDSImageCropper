@@ -1,13 +1,24 @@
 
-console.log("main.js");
+///console.log("main.js");
+///if (typeof  Cropper != "undefined") {
+///  alert(" Cropper Exist main");
+///}
+///else{
+///  alert(" Cropper NOT Exist main");
+///}
+/////$.fn.cropper.noConflict();
+//Cropper.noConflict();
+
+console.log("main.js v1");
+
 if (typeof  Cropper != "undefined") {
-  alert(" Cropper Exist main");
+  console.log(" Cropper Exist main");
+  //Cropper.noConflict();
 }
 else{
-  alert(" Cropper NOT Exist main");
+  console.log(" Cropper NOT Exist main");
 }
-//$.fn.cropper.noConflict();
-//Cropper.noConflict();
+
 $(function () {
   'use strict';
   console.log("In main.js combined v1");

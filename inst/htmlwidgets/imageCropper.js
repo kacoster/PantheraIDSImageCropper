@@ -12,7 +12,17 @@ HTMLWidgets.widget({
 
       renderValue: function(x) {
 
-        console.log("imageCropper 1");
+        console.log("imageCropper new");
+
+        if (typeof  Cropper != "undefined") {
+           alert(" Cropper Exist in imageCropper");
+           Cropper.noConflict();
+        }
+        else{
+          alert(" Cropper NOT Exist main");
+        }
+
+
 
         // TODO: code to render the widget, e.g.
         //el.innerText = x.message;
