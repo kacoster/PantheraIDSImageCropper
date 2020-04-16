@@ -1,6 +1,6 @@
 // v 1.0.1
 
-console.log("jquery-cropperr.js");
+
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('jquery'), require('cropperjs')) :
   typeof define === 'function' && define.amd ? define(['jquery', 'cropperjs'], factory) :
@@ -11,10 +11,10 @@ console.log("jquery-cropperr.js");
   Cropper = Cropper && Cropper.hasOwnProperty('default') ? Cropper['default'] : Cropper;
 
   if ($ && $.fn && Cropper) {
-    var AnotherCropper = $.fn.cropperr;
-    var NAMESPACE = 'cropperr';
+    var AnotherCropper = $.fn.cropper;
+    var NAMESPACE = 'cropper';
 
-    $.fn.cropperr = function jQueryCropper(option) {
+    $.fn.cropper = function jQueryCropper(option) {
       for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
         args[_key - 1] = arguments[_key];
       }
@@ -23,25 +23,25 @@ console.log("jquery-cropperr.js");
       this.each(function (i, element) {
         var $element = $(element);
         var isDestroy = option === 'destroy';
-        var cropperr = $element.data(NAMESPACE);
+        var cropper = $element.data(NAMESPACE);
 
-        if (!cropperr) {
+        if (!cropper) {
           if (isDestroy) {
             return;
           }
 
           var options = $.extend({}, $element.data(), $.isPlainObject(option) && option);
-          cropperr = new Cropper(element, options);
-          $element.data(NAMESPACE, cropperr);
+          cropper = new Cropper(element, options);
+          $element.data(NAMESPACE, cropper);
         }
 
         if (typeof option === 'string') {
-          var fn = cropperr[option];
+          var fn = cropper[option];
 
           if ($.isFunction(fn)) {
-            result = fn.apply(cropperr, args);
+            result = fn.apply(cropper, args);
 
-            if (result === cropperr) {
+            if (result === cropper) {
               result = undefined;
             }
 
@@ -54,11 +54,11 @@ console.log("jquery-cropperr.js");
       return result !== undefined ? result : this;
     };
 
-    $.fn.cropperr.Constructor = Cropper;
-    $.fn.cropperr.setDefaults = Cropper.setDefaults;
+    $.fn.cropper.Constructor = Cropper;
+    $.fn.cropper.setDefaults = Cropper.setDefaults;
 
-    $.fn.cropperr.noConflict = function noConflict() {
-      $.fn.cropperr = AnotherCropper;
+    $.fn.cropper.noConflict = function noConflict() {
+      $.fn.cropper = AnotherCropper;
       return this;
     };
   }
