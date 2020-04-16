@@ -3,7 +3,7 @@
 //Cropper.noConflict();
 $(function () {
   'use strict';
-  console.log("In main.js combined v1");
+  console.log("In main.js combined v1 cropperr");
   //var console = window.console || { log: function () {} };
   var URL = window.URL || window.webkitURL;
   var $image = $('#image');
