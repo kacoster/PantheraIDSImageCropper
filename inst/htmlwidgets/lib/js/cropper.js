@@ -1,5 +1,5 @@
 /*!
- * Cropperr.js v1.5.6
+ * Cropper.js v1.5.6
  * https://fengyuanchen.github.io/cropperjs
  *
  * Copyright 2015-present Chen Fengyuan
@@ -8,12 +8,10 @@
  * Date: 2019-10-04T04:33:48.372Z
  */
 
- console.log("In Cropperr");
-
 (function (global, factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
     typeof define === 'function' && define.amd ? define(factory) :
-    (global = global || self, global.Cropperr = factory());
+    (global = global || self, global.Cropper = factory());
   }(this, function () { 'use strict';
   
     function _typeof(obj) {
@@ -2496,7 +2494,7 @@
        * Replace the image's src and rebuild the cropper
        * @param {string} url - The new URL.
        * @param {boolean} [hasSameSize] - Indicate if the new image has the same size as the old one.
-       * @returns {Cropperr} this
+       * @returns {Cropper} this
        */
       replace: function replace(url) {
         var hasSameSize = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
@@ -2550,7 +2548,7 @@
   
       /**
        * Destroy the cropper and remove the instance from the image
-       * @returns {Cropperr} this
+       * @returns {Cropper} this
        */
       destroy: function destroy() {
         var element = this.element;
@@ -2573,7 +2571,7 @@
        * Move the canvas with relative offsets
        * @param {number} offsetX - The relative offset distance on the x-axis.
        * @param {number} [offsetY=offsetX] - The relative offset distance on the y-axis.
-       * @returns {Cropperr} this
+       * @returns {Cropper} this
        */
       move: function move(offsetX) {
         var offsetY = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : offsetX;
@@ -2587,7 +2585,7 @@
        * Move the canvas to an absolute point
        * @param {number} x - The x-axis coordinate.
        * @param {number} [y=x] - The y-axis coordinate.
-       * @returns {Cropperr} this
+       * @returns {Cropper} this
        */
       moveTo: function moveTo(x) {
         var y = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : x;
@@ -2619,7 +2617,7 @@
        * Zoom the canvas with a relative ratio
        * @param {number} ratio - The target ratio.
        * @param {Event} _originalEvent - The original event if any.
-       * @returns {Cropperr} this
+       * @returns {Cropper} this
        */
       zoom: function zoom(ratio, _originalEvent) {
         var canvasData = this.canvasData;
@@ -2639,7 +2637,7 @@
        * @param {number} ratio - The target ratio.
        * @param {Object} pivot - The zoom pivot point coordinate.
        * @param {Event} _originalEvent - The original event if any.
-       * @returns {Cropperr} this
+       * @returns {Cropper} this
        */
       zoomTo: function zoomTo(ratio, pivot, _originalEvent) {
         var options = this.options,
@@ -2692,7 +2690,7 @@
       /**
        * Rotate the canvas with a relative degree
        * @param {number} degree - The rotate degree.
-       * @returns {Cropperr} this
+       * @returns {Cropper} this
        */
       rotate: function rotate(degree) {
         return this.rotateTo((this.imageData.rotate || 0) + Number(degree));
@@ -2701,7 +2699,7 @@
       /**
        * Rotate the canvas to an absolute degree
        * @param {number} degree - The rotate degree.
-       * @returns {Cropperr} this
+       * @returns {Cropper} this
        */
       rotateTo: function rotateTo(degree) {
         degree = Number(degree);
@@ -2717,7 +2715,7 @@
       /**
        * Scale the image on the x-axis.
        * @param {number} scaleX - The scale ratio on the x-axis.
-       * @returns {Cropperr} this
+       * @returns {Cropper} this
        */
       scaleX: function scaleX(_scaleX) {
         var scaleY = this.imageData.scaleY;
@@ -2727,7 +2725,7 @@
       /**
        * Scale the image on the y-axis.
        * @param {number} scaleY - The scale ratio on the y-axis.
-       * @returns {Cropperr} this
+       * @returns {Cropper} this
        */
       scaleY: function scaleY(_scaleY) {
         var scaleX = this.imageData.scaleX;
@@ -2738,7 +2736,7 @@
        * Scale the image
        * @param {number} scaleX - The scale ratio on the x-axis.
        * @param {number} [scaleY=scaleX] - The scale ratio on the y-axis.
-       * @returns {Cropperr} this
+       * @returns {Cropper} this
        */
       scale: function scale(scaleX) {
         var scaleY = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : scaleX;
@@ -2825,7 +2823,7 @@
       /**
        * Set the cropped area position and size with new data
        * @param {Object} data - The new data.
-       * @returns {Cropperr} this
+       * @returns {Cropper} this
        */
       setData: function setData(data) {
         var options = this.options,
@@ -2919,7 +2917,7 @@
       /**
        * Set the canvas position and size with new data.
        * @param {Object} data - The new canvas data.
-       * @returns {Cropperr} this
+       * @returns {Cropper} this
        */
       setCanvasData: function setCanvasData(data) {
         var canvasData = this.canvasData;
@@ -2971,7 +2969,7 @@
       /**
        * Set the crop box position and size with new data.
        * @param {Object} data - The new crop box data.
-       * @returns {Cropperr} this
+       * @returns {Cropper} this
        */
       setCropBoxData: function setCropBoxData(data) {
         var cropBoxData = this.cropBoxData;
@@ -3147,7 +3145,7 @@
       /**
        * Change the aspect ratio of the crop box.
        * @param {number} aspectRatio - The new aspect ratio.
-       * @returns {Cropperr} this
+       * @returns {Cropper} this
        */
       setAspectRatio: function setAspectRatio(aspectRatio) {
         var options = this.options;
@@ -3171,7 +3169,7 @@
       /**
        * Change the drag mode.
        * @param {string} mode - The new drag mode.
-       * @returns {Cropperr} this
+       * @returns {Cropper} this
        */
       setDragMode: function setDragMode(mode) {
         var options = this.options,
@@ -3199,20 +3197,20 @@
       }
     };
   
-    var AnotherCropper = WINDOW.Cropperr;
+    var AnotherCropper = WINDOW.Cropper;
   
-    var Cropperr =
+    var Cropper =
     /*#__PURE__*/
     function () {
       /**
-       * Create a new Cropperr.
+       * Create a new Cropper.
        * @param {Element} element - The target element for cropping.
        * @param {Object} [options={}] - The configuration options.
        */
-      function Cropperr(element) {
+      function Cropper(element) {
         var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
   
-        _classCallCheck(this, Cropperr);
+        _classCallCheck(this, Cropper);
   
         if (!element || !REGEXP_TAG_NAME.test(element.tagName)) {
           throw new Error('The first argument is required and must be an <img> or <canvas> element.');
@@ -3231,7 +3229,7 @@
         this.init();
       }
   
-      _createClass(Cropperr, [{
+      _createClass(Cropper, [{
         key: "init",
         value: function init() {
           var element = this.element;
@@ -3587,14 +3585,14 @@
         }
         /**
          * Get the no conflict cropper class.
-         * @returns {Cropperr} The cropper class.
+         * @returns {Cropper} The cropper class.
          */
   
       }], [{
         key: "noConflict",
         value: function noConflict() {
-          window.Cropperr = AnotherCropper;
-          return Cropperr;
+          window.Cropper = AnotherCropper;
+          return Cropper;
         }
         /**
          * Change the default options.
@@ -3608,11 +3606,11 @@
         }
       }]);
   
-      return Cropperr;
+      return Cropper;
     }();
   
-    assign(Cropperr.prototype, render, preview, events, handlers, change, methods);
+    assign(Cropper.prototype, render, preview, events, handlers, change, methods);
   
-    return Cropperr;
+    return Cropper;
   
   }));
