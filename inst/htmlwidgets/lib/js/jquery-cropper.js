@@ -1,9 +1,11 @@
 // v 1.0.1
 
-console.log("jquery-cropper.js v1");
+console.log("jquery-cropper.js v1-");
 
 if (typeof  Cropper != "undefined") {
   alert(" Cropper Exist main");
+
+  Cropper.noConflict();
   $(function () {
   'use strict';
   console.log("In main.js combined v1");
