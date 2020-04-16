@@ -1,6 +1,6 @@
 // v 1.0.1
 
-console.log("jquery-cropper.js v1");
+console.log("jquery-cropper.js v2");
 
 if (typeof  Cropper != "undefined") {
   console.log(" Cropper Exist main");

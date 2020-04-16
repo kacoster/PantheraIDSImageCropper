@@ -17,6 +17,7 @@ HTMLWidgets.widget({
         if (typeof  Cropper != "undefined") {
            alert(" Cropper Exist in imageCropper");
            Cropper.noConflict();
+           //disable();
            $(function () {
   'use strict';
   console.log("In main.js combined v1");
