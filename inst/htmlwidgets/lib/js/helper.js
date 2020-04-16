@@ -1,3 +1,19 @@
+console.log("In helper.js new ");
+
+var image1 = document.querySelector('#image-1');
+new Cropper(image1, {
+  viewMode: 3,
+  dragMode: 'move',
+  autoCropArea: 3,
+  restore: false,
+  modal: false,
+  guides: false,
+  highlight: false,
+  cropBoxMovable: false,
+  cropBoxResizable: false,
+  toggleDragModeOnDblclick: false,
+});
+
 $(document).ready(function(){
 
   jQuery.fn.extend({
@@ -42,7 +58,7 @@ $(document).ready(function(){
 
 $('#btn-grp-2').append(
 
-  
+
     '<button type="button" class="btn btn-primary" id="reset-btn" data-method="reset" title="Reset">'+
     '<span class="docs-tooltip"  title="reset cropper"><span class="fa fa-sync-alt"></span></span>'+
     '</button>'+
@@ -74,7 +90,7 @@ $('#btn-grp-4').append(
     '<span class="fa fa-redo-alt"></span>'+
     '</span>'+
     '</button>'
-    
+
 );
 
 $('#btn-drag').attr('data-method','setDragMode');
