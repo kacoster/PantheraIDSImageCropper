@@ -1,12 +1,10 @@
 console.log("In helper.js new ");
 
-if($('#image-1').length){
+/*if($('#image-1').length){
 	alert("Div1 exists");
 }else{
 	alert("Div1 does not exists");
 }
-
-$(document).ready(function(){
 
   if($('#image-1').length){
   	console.log("Div1 exists");
@@ -28,7 +26,8 @@ $(document).ready(function(){
     cropBoxMovable: false,
     cropBoxResizable: false,
     toggleDragModeOnDblclick: false,
-  });
+  });*/
+$(document).ready(function(){
 
   jQuery.fn.extend({
     renameAttr: function( name, newName, removeData ) {
