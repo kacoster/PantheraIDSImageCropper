@@ -1,85 +1,9 @@
- function setCanvas(targetID,imgSrc) {
-  'use strict';
 
-  console.log("In main.js combined");
-    // Target different element class here by differentiating the container class
-
-  //$( '#'+targetClass ).append(" <img src="" alt="">" );
-
-
-  var Cropper = window.Cropper;
-  //var URL = window.URL || window.webkitURL;
-  console.log("Exist test : " + $('#'+targetID+' img' ).length );
-
-  if ( $('#'+targetID+' img' ).length ) {
-     $('#'+targetID+' img' ).attr('src',imgSrc );
-    console.log("img exist : ");
-  }else{
-     $('#'+targetID).prepend($('<img>',{id:'currnt-img',src:imgSrc,alt:'camtrap'}));
-  }
-
-  var container = document.querySelector('#'+targetID);
-  console.log(" container : " + container);
-  var image = container.getElementsByTagName('img').item(0);
-  var options = {
-    aspectRatio: 16 / 9,
-    preview: '.img-preview',
-    ready: function (e) {
-      //console.log(e.type);
-    },
-    cropstart: function (e) {
-      //console.log(e.type, e.detail.action);
-    },
-    cropmove: function (e) {
-      //console.log(e.type, e.detail.action);
-    },
-    cropend: function (e) {
-      //console.log(e.type, e.detail.action);
-    },
-    crop: function (e) {
-      var data = e.detail;
-    },
-    zoom: function (e) {
-     // console.log(e.type, e.detail.ratio);
-    }
-  };
-  var cropper = new Cropper(image, options);
-
-
-  document.body.onkeydown = function (event) {
-    var e = event || window.event;
-
-    if (e.target !== this || !cropper || this.scrollTop > 300) {
-      return;
-    }
-
-    switch (e.keyCode) {
-      case 37:
-        e.preventDefault();
-        cropper.move(-1, 0);
-        break;
-
-      case 38:
-        e.preventDefault();
-        cropper.move(0, -1);
-        break;
-
-      case 39:
-        e.preventDefault();
-        cropper.move(1, 0);
-        break;
-
-      case 40:
-        e.preventDefault();
-        cropper.move(0, 1);
-        break;
-    }
-  };
-}
-
+$.fn.cropper.noConflict();
+Cropper.noConflict();
 $(function () {
   'use strict';
-  console.log("In main.js combined 2");
+  console.log("In main.js combined v1");
   var console = window.console || { log: function () {} };
   var URL = window.URL || window.webkitURL;
   var $image = $('#image');
