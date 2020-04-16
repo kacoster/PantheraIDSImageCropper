@@ -1,10 +1,10 @@
 
-$.fn.cropper.noConflict();
-Cropper.noConflict();
+//$.fn.cropper.noConflict();
+//Cropper.noConflict();
 $(function () {
   'use strict';
   console.log("In main.js combined v1");
-  var console = window.console || { log: function () {} };
+  //var console = window.console || { log: function () {} };
   var URL = window.URL || window.webkitURL;
   var $image = $('#image');
   var $download = $('#download');
