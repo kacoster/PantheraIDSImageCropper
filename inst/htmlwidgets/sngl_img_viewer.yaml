@@ -5,6 +5,14 @@ dependencies:
 #  src: htmlwidgets
 #  script: ./lib/js/cropper_v1.js
 #  stylesheet: ./lib/css/cropper_v1.css
+- name: jquery.hammer
+  version: 1.0.0
+  src: htmlwidgets
+  script: ./lib/js/jquery.hammer.js
+- name: hammer.min
+  version: 1.0.0
+  src: htmlwidgets
+  script: ./lib/js/hammer.min.js
 - name: viewerHelper
   version: 1.0.0
   src: htmlwidgets
@@ -25,14 +33,6 @@ dependencies:
   version: 1.0.0
   src: htmlwidgets
   script: ./lib/js/jquery-ui.min.js
-- name: jquery.hammer
-  version: 1.0.0
-  src: htmlwidgets
-  script: ./lib/js/jquery.hammer.js
-- name: hammer.min
-  version: 1.0.0
-  src: htmlwidgets
-  script: ./lib/js/hammer.min.js
 - name: imgViewer
   version: 1.0.0
   src: htmlwidgets
