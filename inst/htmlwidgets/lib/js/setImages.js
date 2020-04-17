@@ -1,7 +1,7 @@
 
-console.log("new setCanvas");
-function setCanvas(moduleId,imgSrc){
-let imgId = 'currnt-img' + moduleId.substring(14, moduleId.length);
+console.log("new setCanvass");
+function setCanvas(targetID,imgSrc){
+let imgId = 'currnt-img' + targetID.substring(14, targetID.length);
 if ( $('#'+targetID+' img' ).length ) {
      $('#'+targetID+' img' ).attr('src',imgSrc );
     //console.log("img exist : ");
