@@ -13,6 +13,7 @@ HTMLWidgets.widget({
       renderValue: function(x) {
 
         // TODO: code to render the widget, e.g.
+        console.log("new sngl_img_viewer.js");
 
         let spcs_idntfctns_scndry_img = new ViewerComponent(
                                             "spcs_idntfctn_id_rf_2",
