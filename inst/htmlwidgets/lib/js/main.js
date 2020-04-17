@@ -1,28 +1,7 @@
-
-///console.log("main.js");
-///if (typeof  Cropper != "undefined") {
-///  alert(" Cropper Exist main");
-///}
-///else{
-///  alert(" Cropper NOT Exist main");
-///}
-/////$.fn.cropper.noConflict();
-//Cropper.noConflict();
-
-console.log("main.js v1");
-
-if (typeof  Cropper != "undefined") {
-  console.log(" Cropper Exist main");
-  //Cropper.noConflict();
-}
-else{
-  console.log(" Cropper NOT Exist main");
-}
-
 $(function () {
   'use strict';
-  console.log("In main.js combined v1");
-  //var console = window.console || { log: function () {} };
+
+  var console = window.console || { log: function () {} };
   var URL = window.URL || window.webkitURL;
   var $image = $('#image');
   var $download = $('#download');
@@ -198,7 +177,7 @@ $(function () {
         case 'getCroppedCanvas':
           if (result) {
 
-
+            
             if (!$download.hasClass('disabled')) {
 
               download.download = uploadedImageName;
@@ -276,7 +255,7 @@ $(function () {
 
   $('#inputImage').change(function () {
     if (typeof (FileReader) != "undefined") {
-
+      
         let dvPreview = $("#ul-layout");
         dvPreview.html("");
         let regex = /^([a-zA-Z0-9\s_\\.\-:])+(.jpg|.jpeg|.gif|.png|.bmp)$/;
@@ -301,7 +280,7 @@ $(function () {
                     let liID = (imagefile.name).slice(0, (imagefile.name).indexOf("."));
                     let myli = '<li id="' + liID + '"><img id="' + imagefile.type + '" style="' + imgsyl + '"  class="' + cl + '" src="' + e.target.result + '"  alt="' + imagefile.name + '" /> </li>';
                     dvPreview.append(myli);
-
+                    
                 }
                 reader.readAsDataURL(file[0]);
             } else {
@@ -316,5 +295,5 @@ $(function () {
 
 });
 
-
+   
 });

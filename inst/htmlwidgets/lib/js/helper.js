@@ -1,4 +1,3 @@
-console.log("In helper.js new ");
 $(document).ready(function(){
 
   jQuery.fn.extend({
@@ -43,7 +42,7 @@ $(document).ready(function(){
 
 $('#btn-grp-2').append(
 
-
+  
     '<button type="button" class="btn btn-primary" id="reset-btn" data-method="reset" title="Reset">'+
     '<span class="docs-tooltip"  title="reset cropper"><span class="fa fa-sync-alt"></span></span>'+
     '</button>'+
@@ -75,7 +74,7 @@ $('#btn-grp-4').append(
     '<span class="fa fa-redo-alt"></span>'+
     '</span>'+
     '</button>'
-
+    
 );
 
 $('#btn-drag').attr('data-method','setDragMode');

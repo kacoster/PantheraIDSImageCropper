@@ -1,4 +1,6 @@
 // v 1.0.1
+
+
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('jquery'), require('cropperjs')) :
   typeof define === 'function' && define.amd ? define(['jquery', 'cropperjs'], factory) :
