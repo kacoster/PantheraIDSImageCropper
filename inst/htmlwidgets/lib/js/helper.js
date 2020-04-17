@@ -1,32 +1,4 @@
 console.log("In helper.js new ");
-
-/*if($('#image-1').length){
-	alert("Div1 exists");
-}else{
-	alert("Div1 does not exists");
-}
-
-  if($('#image-1').length){
-  	console.log("Div1 exists");
-  }else{
-  	console.log("Div1 does not exists");
-  }
-
-  var image1 = document.querySelector('#image-1');
-
-
-  new Cropper(image1, {
-    viewMode: 3,
-    dragMode: 'move',
-    autoCropArea: 3,
-    restore: false,
-    modal: false,
-    guides: false,
-    highlight: false,
-    cropBoxMovable: false,
-    cropBoxResizable: false,
-    toggleDragModeOnDblclick: false,
-  });*/
 $(document).ready(function(){
 
   jQuery.fn.extend({

@@ -7,15 +7,6 @@
  *
  * Date: 2019-10-04T04:33:48.372Z
  */
-console.log("cropper.js");
-if (typeof  Cropper != "undefined") {
-           alert(" Cropper Exist in imageCropper");
-           Cropper.noConflict();
-        }
-        else{
-          alert(" Cropper NOT Exist main");
-        }
-
 
 (function (global, factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :

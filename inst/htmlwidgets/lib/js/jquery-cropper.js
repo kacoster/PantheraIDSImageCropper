@@ -1,15 +1,4 @@
 // v 1.0.1
-
-console.log("jquery-cropper.js v2");
-
-if (typeof  Cropper != "undefined") {
-  console.log(" Cropper Exist main");
-  //Cropper.noConflict();
-}
-else{
-  console.log(" Cropper NOT Exist main");
-}
-
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('jquery'), require('cropperjs')) :
   typeof define === 'function' && define.amd ? define(['jquery', 'cropperjs'], factory) :
