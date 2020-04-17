@@ -1,18 +1,9 @@
 # (uncomment to add a dependency)
 dependencies:
-#- name: cropper_1
-#  version: 1.0.0
-#  src: htmlwidgets
-#  script: ./lib/js/cropper_v1.js
-#  stylesheet: ./lib/css/cropper_v1.css
-- name: jquery.hammer
+- name: wheelzoom
   version: 1.0.0
   src: htmlwidgets
-  script: ./lib/js/jquery.hammer.js
-- name: hammer.min
-  version: 1.0.0
-  src: htmlwidgets
-  script: ./lib/js/hammer.min.js
+  script: ./lib/js/wheelzoom.js
 - name: viewerHelper
   version: 1.0.0
   src: htmlwidgets
@@ -25,23 +16,7 @@ dependencies:
   version: 0.4.10
   src: htmlwidgets
   script: ./lib/js/jquery-3.4.1.slim.min.js
-- name: jquery-mousewheel
-  version: 1.0.0
-  src: htmlwidgets
-  script: ./lib/js/jquery-mousewheel.js
-- name: jquery-ui.min
-  version: 1.0.0
-  src: htmlwidgets
-  script: ./lib/js/jquery-ui.min.js
-- name: imgViewer
-  version: 1.0.0
-  src: htmlwidgets
-  script: ./lib/js/imgViewer.js
 - name: setImages
   version: 1.0.0
   src: htmlwidgets
   script: ./lib/js/setImages.js
-- name: hammerjs
-  version: 1.0.0
-  src: htmlwidgets
-  script: ./lib/js/hammer.js
