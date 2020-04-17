@@ -1,5 +1,5 @@
 
-console.log("new setCanvas");
+console.log("neww setCanvas");
 function setCanvas(targetID,imgSrc){
 let imgId = 'currnt-img_' + targetID.substring(14, targetID.length);
 if ( $('#'+targetID+' img' ).length ) {
@@ -8,7 +8,7 @@ if ( $('#'+targetID+' img' ).length ) {
   }else{
 
 
-     $('#'+targetID).prepend($('<img>',{id:imgId,src:imgSrc,alt:'camtrap'}));
+     $('#'+targetID).prepend($('<img>',{id:imgId,src:imgSrc,alt:'camtrap',height:'500px'}));
 
 
       wheelzoom(document.querySelector("#"+imgId));
