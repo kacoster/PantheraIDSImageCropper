@@ -1,5 +1,5 @@
 
-console.log("new setCanvass");
+console.log("new setCanvas");
 function setCanvas(targetID,imgSrc){
 let imgId = 'currnt-img_' + targetID.substring(14, targetID.length);
 if ( $('#'+targetID+' img' ).length ) {
@@ -10,7 +10,7 @@ if ( $('#'+targetID+' img' ).length ) {
 
      $(document).ready( function() {
 
-						$("#"+imgId).imgViewer());
+						$("#"+imgId).imgViewer();
       });
 
   }
