@@ -3,6 +3,8 @@
   *
   * Copyright (c) 2016 Jorik Tangelder;
 * Licensed under the MIT license */
+
+console.log("hammer.js");
   (function(window, document, exportName, undefined) {
     'use strict';
 

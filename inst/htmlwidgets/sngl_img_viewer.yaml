@@ -13,10 +13,6 @@ dependencies:
   version: 1.0.0
   src: htmlwidgets
   script: ./lib/js/hammer.min.js
-- name: hammer
-  version: 1.0.0
-  src: htmlwidgets
-  script: ./lib/js/hammer.js
 - name: viewerHelper
   version: 1.0.0
   src: htmlwidgets
@@ -45,3 +41,7 @@ dependencies:
   version: 1.0.0
   src: htmlwidgets
   script: ./lib/js/setImages.js
+- name: hammerjs
+  version: 1.0.0
+  src: htmlwidgets
+  script: ./lib/js/hammer.js
