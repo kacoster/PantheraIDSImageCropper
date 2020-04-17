@@ -8,10 +8,9 @@ if ( $('#'+targetID+' img' ).length ) {
   }else{
      $('#'+targetID).prepend($('<img>',{id:imgId,src:imgSrc,alt:'camtrap'}));
 
-     $(document).ready( function() {
+
 
 						$("#"+imgId).imgViewer();
-      });
 
   }
 }
