@@ -1,5 +1,3 @@
-console.log("helper.js pimgc");
-
 $(document).ready(function(){
 
   jQuery.fn.extend({
