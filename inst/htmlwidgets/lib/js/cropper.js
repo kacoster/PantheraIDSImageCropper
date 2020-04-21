@@ -7,7 +7,8 @@
  *
  * Date: 2019-10-04T04:33:48.372Z
  */
-console.log("cropper.js pimgc");
+
+console.log("cropper.js pimgc - new");
 
 (function (global, factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
