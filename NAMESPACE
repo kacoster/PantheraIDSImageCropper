@@ -3,7 +3,3 @@
 export(imageCropper)
 export(imageCropperOutput)
 export(renderImageCropper)
-export(renderSngl_img_viewer)
-export(sngl_img_viewer)
-export(sngl_img_viewerOutput)
-import(htmlwidgets)
