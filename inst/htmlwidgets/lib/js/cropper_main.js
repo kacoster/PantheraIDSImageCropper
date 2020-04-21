@@ -1,4 +1,4 @@
-console.log("main.js pimgc");
+console.log("cropper_main.js pimgc");
 
 $(function () {
   'use strict';

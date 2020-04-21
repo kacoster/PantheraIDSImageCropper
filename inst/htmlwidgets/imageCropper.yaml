@@ -11,7 +11,7 @@ dependencies:
 - name: main
   version: 1.7.0
   src: htmlwidgets
-  script: ./lib/js/main.js
+  script: ./lib/js/cropper_main.js
   stylesheet: ./lib/css/all.css
 - name: helper
   version: 0.0.1
