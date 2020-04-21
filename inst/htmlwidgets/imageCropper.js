@@ -12,7 +12,7 @@ HTMLWidgets.widget({
 
       renderValue: function(x) {
 
-        console.log("imageCropper new");
+        console.log("imageCropper.js  pimgc");
 
         // TODO: code to render the widget, e.g.
         //el.innerText = x.message;

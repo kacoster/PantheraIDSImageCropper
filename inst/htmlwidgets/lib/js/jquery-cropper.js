@@ -1,5 +1,5 @@
 // v 1.0.1
-
+console.log("jquery-cropper.js pimgc");
 
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('jquery'), require('cropperjs')) :

@@ -1,3 +1,5 @@
+console.log("main.js pimgc");
+
 $(function () {
   'use strict';
 
