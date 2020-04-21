@@ -1,4 +1,9 @@
 dependencies:
+- name: cropper_main
+  version: 1.7.0
+  src: htmlwidgets
+  script: ./lib/js/cropper_main.js
+  stylesheet: ./lib/css/all.css
 - name: cropper
   version: 1.7.0
   src: htmlwidgets
@@ -8,11 +13,6 @@ dependencies:
   version: 1.7.0
   src: htmlwidgets
   script: ./lib/js/jquery-cropper.js
-- name: main
-  version: 1.7.0
-  src: htmlwidgets
-  script: ./lib/js/main.js
-  stylesheet: ./lib/css/all.css
 - name: helper
   version: 0.0.1
   src: htmlwidgets
