@@ -44,9 +44,15 @@ $(function () {
 
     $('#btn-drag').attr('data-toggle','tooltip');
     $('#btn-drag').attr('data-original-title','drag mode');
+    
 
-    $('#reset-btn').attr('data-toggle','tooltip');
-    $('#reset-btn').attr('data-original-title','reset cropper');
+
+    $('#aspect4').click(function() {
+      console.log('drag mode');
+      //alert( "Handler for .click() called." );
+    });
+    // $('#reset-btn').attr('data-toggle','tooltip');
+    // $('#reset-btn').attr('data-original-title','reset cropper');
 
   });
   // Cropper
