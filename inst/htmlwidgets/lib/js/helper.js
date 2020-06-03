@@ -43,6 +43,21 @@ $(document).ready(function(){
 $('#btn-grp-2').append(
 
   
+    '<button type="button" class="btn btn-primary" id="reset-btn" data-toggle="tooltip" data-original-title="reset cropper" data-method="reset" title="Reset">'+
+    '<span><span class="fa fa-sync-alt"></span></span>'+
+    '</button>'+
+    '<label class="btn btn-primary" id="aspect4">'+
+    '<input type="radio" class="sr-only" id="aspectRatio4" name="aspectRatio" value="NaN">'+
+    '<span class="docs-tooltip" data-toggle="tooltip" data-animation="false" title="grab mode">'+
+    '<span class="fa fa-crop-alt"></span>'+
+    '</span>'+
+    '</label>'
+);
+
+/***
+ $('#btn-grp-2').append(
+
+  
     '<button type="button" class="btn btn-primary" id="reset-btn" data-method="reset" title="Reset">'+
     '<span class="docs-tooltip"  title="reset cropper"><span class="fa fa-sync-alt"></span></span>'+
     '</button>'+
@@ -53,6 +68,7 @@ $('#btn-grp-2').append(
     '</span>'+
     '</label>'
 );
+ */
 
 /*$('#btn-grp-3').append(
     '<label class="btn btn-primary">'+
@@ -79,7 +95,7 @@ $('#btn-grp-4').append(
 
 $('#btn-drag').attr('data-method','setDragMode');
 $('#btn-drag').attr('data-option','move');
-//$('#').click();
+
 $( "#aspect4" ).trigger( "click" );
 
 document.getElementById('download').setAttribute('download','cropped.jpg');

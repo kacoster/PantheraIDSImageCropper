@@ -39,26 +39,35 @@ $(function () {
   $( document ).ready(function() {
     let src = "default.JPG";
     $image.cropper('destroy').attr('src', src).cropper(options);
+    $('#btn-grp-1').attr('data-toggle','tooltip');
+    $('#btn-grp-1').attr('data-original-title','import images');
+
+    $('#btn-drag').attr('data-toggle','tooltip');
+    $('#btn-drag').attr('data-original-title','drag mode');
+
+    $('#reset-btn').attr('data-toggle','tooltip');
+    $('#reset-btn').attr('data-original-title','reset cropper');
+
   });
   // Cropper
   $image.on({
     ready: function (e) {
-      console.log(e.type);
+      //console.log(e.type);
     },
     cropstart: function (e) {
-      console.log(e.type, e.detail.action);
+      //console.log(e.type, e.detail.action);
     },
     cropmove: function (e) {
-      console.log(e.type, e.detail.action);
+      //console.log(e.type, e.detail.action);
     },
     cropend: function (e) {
-      console.log(e.type, e.detail.action);
+      //console.log(e.type, e.detail.action);
     },
     crop: function (e) {
-      console.log(e.type);
+      //console.log(e.type);
     },
     zoom: function (e) {
-      console.log(e.type, e.detail.ratio);
+      //console.log(e.type, e.detail.ratio);
     }
   }).cropper(options);
 
@@ -134,7 +143,7 @@ $(function () {
           try {
             data.option = JSON.parse($target.val());
           } catch (e) {
-            console.log(e.message);
+            //console.log(e.message);
           }
         }
       }
@@ -189,7 +198,7 @@ $(function () {
                 'opacity': '0.2',
                 'filter': 'alpha(opacity=40)'
               });
-              //$(".list-unstyled > li ").css("background-color", "yellow");
+              //$(".docs-datalist-unstyled > li ").css("background-color", "yellow");
 
             }
           }
