@@ -47,10 +47,10 @@ $(function () {
     
 
 
-    $('#aspect4').click(function() {
-      console.log('drag mode');
-      //alert( "Handler for .click() called." );
-    });
+    // $('#aspect4').click(function() {
+    //   console.log('drag mode');
+    //   $('.img-container').dblclick();
+    // });
     // $('#reset-btn').attr('data-toggle','tooltip');
     // $('#reset-btn').attr('data-original-title','reset cropper');
 
@@ -312,3 +312,5 @@ $(function () {
 
    
 });
+
+

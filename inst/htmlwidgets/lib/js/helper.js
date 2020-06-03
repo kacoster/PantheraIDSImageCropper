@@ -43,7 +43,7 @@ $(document).ready(function(){
 $('#btn-grp-2').append(
 
   
-    '<button type="button" class="btn btn-primary" id="reset-btn" data-toggle="tooltip" data-original-title="reset cropper" data-method="reset" title="Reset">'+
+    '<button type="button" class="btn btn-primary" id="reset-btn" data-toggle="tooltip" data-original-title="reset cropper" data-method="reset" title="reset">'+
     '<span><span class="fa fa-sync-alt"></span></span>'+
     '</button>'+
     '<label class="btn btn-primary" id="aspect4" data-method="setDragMode">'+
@@ -100,9 +100,3 @@ $( "#aspect4" ).trigger( "click" );
 
 document.getElementById('download').setAttribute('download','cropped.jpg');
 });
-
-
-
-
-
-
